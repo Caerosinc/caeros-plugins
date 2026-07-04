@@ -1,0 +1,24 @@
+{
+  "name": "spreadsheets",
+  "version": "0.1.0",
+  "description": "Create, edit, analyze, verify, and export XLSX/CSV spreadsheets with formulas, formatting, charts, and workbook checks.",
+  "keywords": ["spreadsheet", "spreadsheets", "excel", "xlsx", "csv", "workbook", "sheets", "google sheets", "financial model", "dashboard"],
+  "capabilities": {
+    "skills": "./skills"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Spreadsheets",
+    "shortDescription": "Create and edit spreadsheet files",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "brandColor": "#107C41",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Create a spreadsheet to analyze this company's financials",
+      "Create a corporate expense report template for my company",
+      "Take this bank statement CSV and create a full spreadsheet to analyze my transactions"
+    ]
+  }
+}
