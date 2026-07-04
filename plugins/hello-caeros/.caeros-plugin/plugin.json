@@ -1,0 +1,20 @@
+{
+  "name": "hello-caeros",
+  "version": "0.1.0",
+  "description": "A reference Caeros plugin demonstrating a bundled skill.",
+  "keywords": ["example", "reference"],
+  "capabilities": {
+    "skills": "./skills"
+  },
+  "permissions": { "fs": ["."] },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Hello Caeros",
+    "shortDescription": "Reference plugin with a greeting skill.",
+    "category": "examples",
+    "developerName": "Caeros",
+    "brandColor": "#1b365d",
+    "capabilities": ["skills"],
+    "defaultPrompt": ["use the greet skill to welcome me"]
+  }
+}

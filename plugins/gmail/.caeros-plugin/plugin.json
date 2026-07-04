@@ -1,0 +1,25 @@
+{
+  "name": "gmail",
+  "version": "0.1.0",
+  "description": "Read, search, draft, and send Gmail through your connected Google account.",
+  "keywords": ["gmail", "email", "google", "inbox", "productivity"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Gmail",
+    "shortDescription": "Inbox triage, search, drafts, and sends via your connected Google account.",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "brandColor": "#EA4335",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "defaultPrompt": [
+      "Summarize my unread email from today",
+      "Draft a reply to the latest email from my manager",
+      "Find the last invoice email and pull out the amount due"
+    ]
+  }
+}

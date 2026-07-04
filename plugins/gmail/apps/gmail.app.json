@@ -1,0 +1,37 @@
+{
+  "apps": [
+    {
+      "slug": "gmail",
+      "name": "Gmail",
+      "description": "Google Mail — read, search, draft, and send email.",
+      "provider": "composio",
+      "required": true,
+      "tools": [
+        "GMAIL_FETCH_EMAILS",
+        "GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID",
+        "GMAIL_FETCH_MESSAGE_BY_THREAD_ID",
+        "GMAIL_LIST_THREADS",
+        "GMAIL_GET_ATTACHMENT",
+        "GMAIL_CREATE_EMAIL_DRAFT",
+        "GMAIL_SEND_EMAIL",
+        "GMAIL_REPLY_TO_THREAD",
+        "GMAIL_ADD_LABEL_TO_EMAIL",
+        "GMAIL_LIST_LABELS",
+        "GMAIL_MODIFY_THREAD_LABELS",
+        "GMAIL_MARK_AS_READ"
+      ],
+      "policy": {
+        "GMAIL_FETCH_*": "allow",
+        "GMAIL_LIST_*": "allow",
+        "GMAIL_GET_ATTACHMENT": "allow",
+        "GMAIL_MARK_AS_READ": "allow",
+        "GMAIL_CREATE_EMAIL_DRAFT": "allow",
+        "GMAIL_ADD_LABEL_TO_EMAIL": "ask_first",
+        "GMAIL_MODIFY_THREAD_LABELS": "ask_first",
+        "GMAIL_SEND_EMAIL": "ask_first",
+        "GMAIL_REPLY_TO_THREAD": "ask_first"
+      },
+      "instructions": "./gmail-instructions.md"
+    }
+  ]
+}
