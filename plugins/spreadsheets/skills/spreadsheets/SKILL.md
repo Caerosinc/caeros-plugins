@@ -7,6 +7,8 @@ description: Use this skill when a user asks to create, modify, analyze, visuali
 
 For substantial workbook builds (financial models, dashboards, multi-sheet analyses), delegate to the `cae_excel` specialist via the task tool — it plans, builds, and is blocked from finishing until the workbook passes validation. Use this skill directly for quick edits, CSV work, and to enforce the conventions below on any spreadsheet you produce.
 
+**Opening/viewing an existing workbook is NOT a build task — never delegate it to cae_excel.** To show a workbook to the user, state its absolute file path on its own line in your reply: the app renders it as a clickable link that opens the built-in spreadsheet editor (sheet tabs, formula bar). To summarize contents, read it with `analyst_read_table_file` and answer directly.
+
 ## Authoring rules
 
 - Author with Python (openpyxl; pandas for data prep). Write ONE builder script per task and patch/rerun it — do not scatter one-off snippets or heredocs.
