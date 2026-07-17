@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "slug": "anthropic_administrator",
+      "provider": "composio",
+      "required": false
+    }
+  ]
+}

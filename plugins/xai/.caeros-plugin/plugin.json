@@ -1,0 +1,31 @@
+{
+  "name": "xai",
+  "version": "0.1.0",
+  "description": "Build with xAI's Grok API — models, server-side search, and best practices.",
+  "keywords": ["xai", "grok", "api", "developer tools", "x search", "live search", "ai"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "xAI Developers",
+    "shortDescription": "Develop with the Grok API — models, server-side search, troubleshooting.",
+    "longDescription": "Build with xAI from Caeros: the current Grok lineup (Grok 4.5, Grok Build) with real context windows and pricing, the api.x.ai API surface (Responses API plus OpenAI-compatible clients), server-side X and web search, troubleshooting, and key setup. Also covers using Grok inside Caeros itself: add an xAI key in model settings and the Grok lanes plus native X search light up.",
+    "developerName": "Caeros",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://x.ai",
+    "privacyPolicyUrl": "https://x.ai/legal/privacy-policy",
+    "termsOfServiceUrl": "https://x.ai/legal/terms-of-service",
+    "defaultPrompt": [
+      "Write a script that calls Grok 4.5 with structured outputs",
+      "My xAI API request is failing — help me debug it",
+      "Should I use Grok 4.5 or Grok Build for my coding agent?"
+    ],
+    "brandColor": "#000000",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
