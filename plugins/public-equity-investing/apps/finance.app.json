@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "slug": "alpha_vantage",
+      "provider": "composio",
+      "required": true
+    },
+    {
+      "slug": "polygon",
+      "provider": "composio",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "public-equity-investing",
+  "version": "0.1.0",
+  "description": "Public equity PM research: tearsheets, earnings reviews, and idea screening.",
+  "keywords": ["public equity", "investing", "pm research", "earnings", "tearsheet", "screening", "stocks", "finance"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Public Equity Investing",
+    "shortDescription": "PM research — tearsheets, earnings reviews, and idea screening.",
+    "longDescription": "Portfolio-manager research workflows: company tearsheets, quarterly earnings reviews, and idea screening. Market data and fundamentals come from the Alpha Vantage and Polygon apps via Composio; pre-IPO history, ownership, and private-market context come from Caeros' vault (full PitchBook data in BigQuery).",
+    "developerName": "Caeros",
+    "category": "Finance",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Build a tearsheet for NVDA",
+      "Review MSFT's latest quarter and how the market took it",
+      "Screen for mid-caps with accelerating revenue growth and expanding margins"
+    ],
+    "brandColor": "#1B7A3D",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

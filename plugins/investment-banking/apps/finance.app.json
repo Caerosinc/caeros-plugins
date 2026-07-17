@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "slug": "alpha_vantage",
+      "provider": "composio",
+      "required": false
+    }
+  ]
+}
