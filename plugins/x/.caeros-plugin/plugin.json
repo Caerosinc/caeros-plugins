@@ -1,0 +1,34 @@
+{
+  "name": "x",
+  "version": "0.1.0",
+  "description": "Search, read, and organize X through X's official MCP server.",
+  "keywords": ["x", "twitter", "social", "search", "news", "trends", "bookmarks", "timelines"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["api.x.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "X",
+    "shortDescription": "Search posts, timelines, trends, news, and bookmarks on X.",
+    "longDescription": "Connects Caeros to X's official MCP server (api.x.com/mcp) with your own X account. Search the full post archive, read user timelines and threads, scan trends and news, and capture or organize bookmarks with folders. Read-and-bookmark by design: the connection never requests posting permissions.",
+    "developerName": "Caeros",
+    "category": "Social",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://x.com",
+    "privacyPolicyUrl": "https://x.com/en/privacy",
+    "termsOfServiceUrl": "https://x.com/en/tos",
+    "defaultPrompt": [
+      "What is X saying about {topic} today?",
+      "Summarize the latest posts from @openai",
+      "Bookmark the best posts about AI agents this week into a folder"
+    ],
+    "brandColor": "#000000",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
