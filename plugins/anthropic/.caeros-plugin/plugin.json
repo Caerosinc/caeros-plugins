@@ -1,0 +1,32 @@
+{
+  "name": "anthropic",
+  "version": "0.1.0",
+  "description": "Build AI apps and agents on the Claude API with Anthropic best practices.",
+  "keywords": ["anthropic", "claude", "api", "agents", "sdk", "messages api", "developer tools", "ai"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Anthropic Developers",
+    "shortDescription": "Develop AI apps and agents with the Claude API, SDKs, and best practices.",
+    "longDescription": "Build with Anthropic from Caeros: current Claude models and pricing, Messages API patterns (adaptive thinking, effort, tool use, structured outputs, caching, batches), the four ways to build agents (manual loop, Tool Runner, Managed Agents, Claude Agent SDK), API troubleshooting, and key setup. Optionally connect the Anthropic Admin app via Composio for organization usage and workspace management.",
+    "developerName": "Caeros",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://platform.claude.com",
+    "privacyPolicyUrl": "https://www.anthropic.com/legal/privacy",
+    "termsOfServiceUrl": "https://www.anthropic.com/legal/consumer-terms",
+    "defaultPrompt": [
+      "Write a Python script that calls Claude Opus 4.8 with adaptive thinking and streaming",
+      "My Claude API request returns a 400 — help me debug it",
+      "Which Claude model should I use for a high-volume extraction pipeline?"
+    ],
+    "brandColor": "#D97757",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
