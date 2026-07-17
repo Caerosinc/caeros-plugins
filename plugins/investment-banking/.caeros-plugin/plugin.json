@@ -1,0 +1,29 @@
+{
+  "name": "investment-banking",
+  "version": "0.1.0",
+  "description": "M&A, capital markets, and LevFin workflows on Caeros' private-markets vault.",
+  "keywords": ["investment banking", "m&a", "capital markets", "levfin", "comps", "precedents", "pitchbook", "finance"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Investment Banking",
+    "shortDescription": "M&A, capital markets, LevFin — comps, precedents, and deal screening.",
+    "longDescription": "Banker workflows on top of Caeros' private-markets vault (full PitchBook deal, company, investor, and fund data in BigQuery): precedent transactions with multiples, trading comps, acquirer and target screening, and export-ready sheets. Public trading data comes from the Alpha Vantage app when connected; everything else runs on the vault, no external subscription needed.",
+    "developerName": "Caeros",
+    "category": "Finance",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Pull precedent transactions in vertical SaaS above $100M and build a multiples sheet",
+      "Screen acquisition targets in industrial software with $10-50M revenue",
+      "Who are the most active fintech acquirers over the last two years?"
+    ],
+    "brandColor": "#0B5340",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
