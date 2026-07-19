@@ -1,0 +1,34 @@
+{
+  "name": "semgrep",
+  "version": "0.1.0",
+  "description": "Static analysis with Semgrep: scan your code for vulnerabilities and write custom rules.",
+  "keywords": ["semgrep", "security", "sast", "static analysis", "custom rules", "owasp", "secrets", "ci"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Semgrep",
+    "shortDescription": "Scan code with Semgrep rulesets and author custom rules with autofix.",
+    "longDescription": "Connects Caeros to the official Semgrep MCP server (built into the semgrep binary) so static analysis runs locally on your own code. Scan with curated rulesets (security-audit, OWASP Top Ten, secrets), wire scans into CI with SARIF output, and write custom rules with pattern syntax, taint mode, and autofix to encode your team's security invariants. Defensive by design: find and fix vulnerabilities in code you own.",
+    "developerName": "Caeros",
+    "category": "Security",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://semgrep.dev",
+    "privacyPolicyUrl": "https://semgrep.dev/privacy",
+    "termsOfServiceUrl": "https://semgrep.dev/terms",
+    "defaultPrompt": [
+      "Scan this repo with the security-audit ruleset and summarize the findings",
+      "Write a custom Semgrep rule that bans string-built SQL in our codebase",
+      "Add a Semgrep step with SARIF output to our CI pipeline"
+    ],
+    "brandColor": "#0BAB7C",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

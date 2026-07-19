@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "clerk": {
+      "transport": "url",
+      "url": "https://mcp.clerk.com/mcp"
+    }
+  }
+}

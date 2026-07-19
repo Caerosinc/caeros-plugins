@@ -1,0 +1,32 @@
+{
+  "name": "replicate",
+  "version": "0.1.0",
+  "description": "Discover and run thousands of open AI models on Replicate, and deploy your own with Cog.",
+  "keywords": ["replicate", "open models", "image generation", "video generation", "flux", "predictions", "deployments", "cog", "inference", "ai media"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.replicate.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Replicate",
+    "shortDescription": "Run image, video, audio, and language models with one API.",
+    "longDescription": "Connects Caeros to Replicate's official hosted MCP server (mcp.replicate.com) so the agent can search, compare, and run thousands of models: FLUX and Seedream for images, Veo and Wan for video, plus audio models and open LLMs. Skills cover the predictions API (sync with Prefer: wait, polling, streaming, file inputs and outputs), model selection across the catalog, API token setup, and production deployments including packaging custom models with Cog.",
+    "developerName": "Caeros",
+    "category": "AI & Media",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://replicate.com",
+    "defaultPrompt": [
+      "Generate four product photo variations with FLUX 1.1 Pro",
+      "Which video model on Replicate fits a 10 second ad clip, and what will it cost?",
+      "Set up a deployment for my custom model with autoscaling"
+    ],
+    "brandColor": "#0F172A",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

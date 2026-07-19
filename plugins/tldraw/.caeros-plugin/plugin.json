@@ -1,0 +1,29 @@
+{
+  "name": "tldraw",
+  "version": "0.1.0",
+  "description": "Build infinite canvas apps with the tldraw SDK: embedding, persistence, custom shapes and tools, and multiplayer sync.",
+  "keywords": ["tldraw", "canvas", "whiteboard", "infinite canvas", "react", "custom shapes", "multiplayer", "sync"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "tldraw",
+    "shortDescription": "Embed and extend the tldraw infinite canvas SDK in React apps.",
+    "longDescription": "Brings current tldraw SDK knowledge into Caeros: embedding the editor with the Tldraw React component, local persistence and snapshots, working with the store and editor API, licensing and versioning realities (frequent minor releases can break, pin exact versions), building custom shapes with ShapeUtil, custom tools and bindings, and multiplayer with tldraw sync, from the hosted demo server to self-hosted Cloudflare Durable Objects backends.",
+    "developerName": "Caeros",
+    "category": "Frontend & Design",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://tldraw.dev",
+    "defaultPrompt": [
+      "Embed a tldraw canvas with local persistence in my React app",
+      "Create a custom sticky-note shape with a ShapeUtil",
+      "Add multiplayer to my tldraw app with tldraw sync"
+    ],
+    "brandColor": "#2F80ED",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

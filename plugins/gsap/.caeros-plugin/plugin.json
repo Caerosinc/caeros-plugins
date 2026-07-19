@@ -1,0 +1,29 @@
+{
+  "name": "gsap",
+  "version": "0.1.0",
+  "description": "Animate the web with GSAP: tweens, timelines, ScrollTrigger, the formerly premium plugins (now free), and React integration.",
+  "keywords": ["gsap", "animation", "scrolltrigger", "splittext", "timeline", "motion", "web animation", "react"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "GSAP",
+    "shortDescription": "Build performant web animations with GSAP tweens, timelines, and ScrollTrigger.",
+    "longDescription": "Brings current GSAP knowledge into Caeros: core tweens and timelines, easing and performance patterns, ScrollTrigger scroll animations with pinning and scrub, and the plugin set that went free for everyone in the 3.13 release (SplitText, MorphSVG, Draggable, ScrollSmoother, and more), plus React integration with the useGSAP hook, proper cleanup, and SSR-safe patterns.",
+    "developerName": "Caeros",
+    "category": "Frontend & Design",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://gsap.com",
+    "defaultPrompt": [
+      "Add a staggered fade-in animation to these cards with GSAP",
+      "Pin this section and scrub a timeline with ScrollTrigger",
+      "Animate a headline word by word with SplitText in my React app"
+    ],
+    "brandColor": "#0AE448",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

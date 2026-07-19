@@ -1,0 +1,34 @@
+{
+  "name": "revenuecat",
+  "version": "0.1.0",
+  "description": "Build in-app subscriptions with RevenueCat: SDKs, webhooks, REST API, and the official RevenueCat MCP server.",
+  "keywords": ["revenuecat", "subscriptions", "in-app purchases", "storekit", "play billing", "entitlements", "paywalls", "webhooks"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.revenuecat.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "RevenueCat",
+    "shortDescription": "Ship in-app subscriptions: iOS, Android, backend webhooks, and project setup.",
+    "longDescription": "Connects Caeros to RevenueCat's official MCP server (mcp.revenuecat.ai) and packs four skills for subscription work: StoreKit 2 purchase and entitlement flows on iOS, Play Billing integration and plan changes on Android, server-side webhooks and REST API patterns, and project setup (API keys, products, entitlements, offerings). Built for developers wiring up subscription infrastructure, not for moving money.",
+    "developerName": "Caeros",
+    "category": "Payments",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.revenuecat.com",
+    "privacyPolicyUrl": "https://www.revenuecat.com/privacy",
+    "termsOfServiceUrl": "https://www.revenuecat.com/terms",
+    "defaultPrompt": [
+      "Wire up RevenueCat entitlement checks in my SwiftUI paywall",
+      "Handle RevenueCat RENEWAL and BILLING_ISSUE webhooks and sync my database",
+      "Set up products, entitlements, and a default offering for my new app"
+    ],
+    "brandColor": "#F2545B",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

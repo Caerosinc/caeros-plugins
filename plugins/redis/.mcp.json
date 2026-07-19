@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "redis": {
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["--from", "redis-mcp-server@latest", "redis-mcp-server"]
+    }
+  }
+}

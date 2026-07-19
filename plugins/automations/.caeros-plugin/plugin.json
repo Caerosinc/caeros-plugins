@@ -1,0 +1,29 @@
+{
+  "name": "automations",
+  "version": "0.1.0",
+  "description": "Prebuilt engineering automations: CI fixing, daily digests, security scans, issue triage, docs, tests, review-comment fixes, and feature-flag cleanup.",
+  "keywords": ["automations", "ci", "security", "triage", "docs", "tests", "code review", "feature flags", "digest"],
+  "capabilities": {
+    "skills": "./skills",
+    "commands": "./commands",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Caeros Automations",
+    "shortDescription": "Prebuilt slash-command automations for everyday engineering upkeep.",
+    "longDescription": "A toolbox of ready-made engineering automations you can run on demand or on a schedule: /fix-ci roots out failing CI runs, /daily-digest summarizes the last 24 hours of repo activity, /vuln-scan hunts for exploitable security issues, /triage-issues works the issue backlog, /gen-docs drafts missing documentation, /add-tests covers risky untested logic, /autofix-review-comments takes a first pass at PR feedback, and /flag-cleanup plans dead feature-flag removal. Every automation reports findings first and only opens PRs when you explicitly ask. Pair with the scheduling-automations skill to run them recurrently.",
+    "developerName": "Caeros",
+    "category": "Automations",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "defaultPrompt": [
+      "/fix-ci",
+      "/daily-digest",
+      "/vuln-scan focus on the API layer"
+    ],
+    "brandColor": "#1b365d",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

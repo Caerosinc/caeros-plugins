@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "braintrust": {
+      "transport": "url",
+      "url": "https://api.braintrust.dev/mcp"
+    }
+  }
+}

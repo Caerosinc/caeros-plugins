@@ -1,0 +1,32 @@
+{
+  "name": "redis",
+  "version": "0.1.0",
+  "description": "Work with Redis data, caching, and search through the official Redis MCP server.",
+  "keywords": ["redis", "cache", "key-value", "streams", "search", "vector search", "json", "in-memory"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Redis",
+    "shortDescription": "Manage and search Redis data: structures, caching, query engine, vectors.",
+    "longDescription": "Connects Caeros to the official Redis MCP server (redis-mcp-server, from the redis/mcp-redis project) against your own Redis instance, local or cloud. Inspect and manipulate strings, hashes, lists, sets, sorted sets, and streams; design cache layers with sound invalidation and stampede protection; and build full-text, JSON, and vector search with the Redis Query Engine. Connection details stay in environment variables, never in config.",
+    "developerName": "Caeros",
+    "category": "Databases",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://redis.io",
+    "defaultPrompt": [
+      "Inspect my Redis keyspace and summarize what is stored and how much memory it uses",
+      "Design a cache-aside layer with stampede protection for {endpoint}",
+      "Create a Redis vector index for {collection} and run a semantic search"
+    ],
+    "brandColor": "#FF4438",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

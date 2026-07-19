@@ -1,0 +1,31 @@
+{
+  "name": "chargebee",
+  "version": "0.1.0",
+  "description": "Build subscription billing on Chargebee: API integration patterns, webhooks with idempotency, and site setup.",
+  "keywords": ["chargebee", "billing", "subscriptions", "invoices", "hosted pages", "webhooks", "dunning", "saas"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Chargebee",
+    "shortDescription": "Integrate Chargebee billing: customers, subscriptions, invoices, webhooks.",
+    "longDescription": "Three developer skills for building on Chargebee: core API integration (customers, subscriptions, invoices, hosted checkout and portal pages under Product Catalog 2.0), webhook handling with idempotency and dunning events, and site setup (test vs live sites, API key types, and connecting your site's own Chargebee MCP server). Chargebee MCP endpoints are per-site, so this plugin documents how to wire yours rather than shipping a fixed server. Focused on building integrations, not on executing payments.",
+    "developerName": "Caeros",
+    "category": "Payments",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.chargebee.com",
+    "privacyPolicyUrl": "https://www.chargebee.com/privacy/",
+    "termsOfServiceUrl": "https://www.chargebee.com/company/terms/",
+    "defaultPrompt": [
+      "Build a Chargebee checkout flow with hosted pages for my SaaS plans",
+      "Handle Chargebee payment_failed webhooks with proper idempotency",
+      "Walk me through setting up a Chargebee test site and API keys"
+    ],
+    "brandColor": "#FF6C36",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

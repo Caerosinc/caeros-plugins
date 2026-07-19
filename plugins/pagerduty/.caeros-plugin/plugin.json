@@ -1,0 +1,32 @@
+{
+  "name": "pagerduty",
+  "version": "0.1.0",
+  "description": "Triage incidents, manage services and on-call, and automate PagerDuty workflows.",
+  "keywords": ["pagerduty", "observability", "incidents", "on-call", "escalation", "alerting", "sre", "postmortems"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.pagerduty.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "PagerDuty",
+    "shortDescription": "Incidents, services, escalation policies, and on-call schedules.",
+    "longDescription": "Work with PagerDuty from Caeros: triage and resolve incidents (acknowledge, reassign, add notes and status updates), manage services, escalation policies, and on-call schedules, and run clean postmortems. Connects to PagerDuty's official hosted MCP server (mcp.pagerduty.com) exposing 60+ tools across incidents, services, on-call, escalation, event orchestration, and status pages, authenticated with your own PagerDuty account.",
+    "developerName": "Caeros",
+    "category": "Observability",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.pagerduty.com",
+    "defaultPrompt": [
+      "Who is on call right now for my services, and what changes tonight?",
+      "Summarize all open PagerDuty incidents and suggest a triage order",
+      "Draft a postmortem timeline from last night's P1 incident"
+    ],
+    "brandColor": "#067A46",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

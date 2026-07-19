@@ -1,0 +1,32 @@
+{
+  "name": "elevenlabs",
+  "version": "0.1.0",
+  "description": "Voice and audio AI with ElevenLabs: text to speech, transcription, agents, dubbing, and sound effects.",
+  "keywords": ["elevenlabs", "text to speech", "tts", "voice", "speech to text", "transcription", "voice agents", "dubbing", "sound effects", "audio"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "ElevenLabs",
+    "shortDescription": "Generate speech, clone voices, transcribe audio, and build voice agents.",
+    "longDescription": "Connects Caeros to the official ElevenLabs MCP server (uvx elevenlabs-mcp) with your ElevenLabs API key. Generate lifelike speech with current models (eleven_v3, eleven_multilingual_v2, eleven_flash_v2_5), transcribe with Scribe, clone and design voices, isolate audio, and create sound effects. Skills also cover the ElevenLabs Agents platform for real-time conversational voice agents, API key setup, and full audio pipelines (STT, dubbing, music).",
+    "developerName": "Caeros",
+    "category": "AI & Media",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://elevenlabs.io",
+    "defaultPrompt": [
+      "Narrate this script as an mp3 with a warm, calm voice",
+      "Transcribe this recording with speaker labels and timestamps",
+      "Help me build a voice agent that answers support questions for my store"
+    ],
+    "brandColor": "#000000",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

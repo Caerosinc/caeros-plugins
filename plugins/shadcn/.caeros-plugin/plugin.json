@@ -1,0 +1,32 @@
+{
+  "name": "shadcn",
+  "version": "0.1.0",
+  "description": "Build UIs with shadcn/ui: CLI workflows, theming, variants, and registries, plus the official shadcn MCP server.",
+  "keywords": ["shadcn", "shadcn/ui", "components", "tailwind", "radix", "base ui", "design system", "registry", "react"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "shadcn/ui",
+    "shortDescription": "Add, theme, and customize shadcn/ui components, and build your own registries.",
+    "longDescription": "Connects Caeros to the official shadcn MCP server (npx shadcn@latest mcp) so agents can browse, search, and install components from the shadcn registry and any private registries in your components.json. Skills cover the CLI add workflow, CSS variable theming, cva variants, dark mode, composition patterns, and building your own registry with registry.json and the shadcn build command.",
+    "developerName": "Caeros",
+    "category": "Frontend & Design",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://ui.shadcn.com",
+    "defaultPrompt": [
+      "Add a login form to this project using shadcn/ui components",
+      "Create a destructive-outline variant for my shadcn Button with cva",
+      "Set up a private shadcn registry for our internal design system"
+    ],
+    "brandColor": "#18181B",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

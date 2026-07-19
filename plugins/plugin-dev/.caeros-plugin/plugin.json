@@ -1,0 +1,29 @@
+{
+  "name": "plugin-dev",
+  "version": "0.1.0",
+  "description": "Toolkit for building Caeros plugins: scaffolding, manifest schema reference, and publishing guides.",
+  "keywords": ["plugins", "plugin development", "scaffolding", "manifest", "skills", "commands", "mcp", "marketplace", "developer tools"],
+  "capabilities": {
+    "skills": "./skills",
+    "commands": "./commands",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Caeros Plugin Dev",
+    "shortDescription": "Build and publish Caeros plugins: scaffolding, manifest reference, marketplace guide.",
+    "longDescription": "Everything needed to author Caeros plugins. The create-caeros-plugin skill is the authoritative reference for plugin structure: directory layout, the full plugin.json manifest schema (capabilities, permissions, runtime, interface), skills and slash-command conventions, MCP server bundling via .mcp.json, and compatibility with other plugin bundle formats. The publish-caeros-plugin skill covers shipping: git-repo marketplaces, the caeros-official marketplace, and the hosted registry. The /new-plugin command scaffolds a working plugin from a one-line description.",
+    "developerName": "Caeros",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "defaultPrompt": [
+      "/new-plugin a plugin that reviews SQL migrations for safety",
+      "What goes in a Caeros plugin.json manifest?",
+      "How do I publish my plugin so teammates can install it?"
+    ],
+    "brandColor": "#1b365d",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

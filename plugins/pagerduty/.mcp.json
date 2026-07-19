@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pagerduty": {
+      "transport": "url",
+      "url": "https://mcp.pagerduty.com/mcp"
+    }
+  }
+}

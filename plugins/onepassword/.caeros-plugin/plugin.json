@@ -1,0 +1,34 @@
+{
+  "name": "onepassword",
+  "version": "0.1.0",
+  "description": "Keep secrets out of code with 1Password developer tooling: op CLI, secret references, and Environments.",
+  "keywords": ["1password", "secrets", "security", "op cli", "secret references", "service accounts", "env", "credentials"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "1Password Developer",
+    "shortDescription": "Inject secrets at runtime with op run, op inject, and op:// references.",
+    "longDescription": "Brings 1Password developer tooling into Caeros: run processes with secrets injected at runtime (op run), template config files (op inject), read single values (op read), and replace plaintext .env values with op:// secret references. Covers service accounts for CI, vault permission scoping, and the official 1Password Environments MCP server (beta) so secrets stay in 1Password instead of your repo, your shell history, or your model context.",
+    "developerName": "Caeros",
+    "category": "Security",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://developer.1password.com",
+    "privacyPolicyUrl": "https://1password.com/legal/privacy",
+    "termsOfServiceUrl": "https://1password.com/legal/terms-of-service",
+    "defaultPrompt": [
+      "Replace the plaintext values in my .env with 1Password secret references",
+      "Show me how to run this dev server with op run so no secrets touch disk",
+      "Set up a 1Password service account for our CI pipeline with least privilege"
+    ],
+    "brandColor": "#0572EC",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

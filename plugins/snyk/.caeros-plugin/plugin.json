@@ -1,0 +1,34 @@
+{
+  "name": "snyk",
+  "version": "0.1.0",
+  "description": "Find and fix vulnerabilities in your code, dependencies, containers, and IaC with Snyk.",
+  "keywords": ["snyk", "security", "vulnerabilities", "sca", "sast", "containers", "iac", "dependencies", "developer tools"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Snyk",
+    "shortDescription": "Scan code, open source, containers, and IaC for vulnerabilities, then fix them.",
+    "longDescription": "Connects Caeros to Snyk through the official Snyk MCP server (built into the Snyk CLI) so scans run locally against your own projects. Test first-party code with Snyk Code, dependencies with Snyk Open Source, images with Snyk Container, and Terraform or Kubernetes files with Snyk IaC. Triage findings by severity, plan upgrade paths, apply fixes, and monitor projects continuously. Defensive by design: everything targets vulnerabilities in your own code.",
+    "developerName": "Caeros",
+    "category": "Security",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://snyk.io",
+    "privacyPolicyUrl": "https://snyk.io/policies/privacy/",
+    "termsOfServiceUrl": "https://snyk.io/policies/terms-of-service/",
+    "defaultPrompt": [
+      "Scan this project's dependencies for vulnerabilities and triage by severity",
+      "Run Snyk Code on my repo and explain the top findings",
+      "Plan the smallest set of upgrades that clears our high severity issues"
+    ],
+    "brandColor": "#4C4A73",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

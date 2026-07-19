@@ -1,0 +1,31 @@
+{
+  "name": "gcp",
+  "version": "0.1.0",
+  "description": "Build, deploy, and operate on Google Cloud: gcloud, Cloud Run, GKE, BigQuery, and IAM.",
+  "keywords": ["gcp", "google cloud", "gcloud", "cloud run", "gke", "kubernetes", "bigquery", "secret manager", "iam", "infrastructure", "cloud"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "Google Cloud",
+    "shortDescription": "Ship on Google Cloud: gcloud auth, Cloud Run deploys, GKE, BigQuery, and secrets.",
+    "longDescription": "Work with Google Cloud from Caeros: set up the gcloud CLI, Application Default Credentials, and keyless service-account auth, deploy services, jobs, and worker pools to Cloud Run from source or images, run GKE the right way (Autopilot vs Standard, kubectl auth, Workload Identity), query BigQuery with the bq CLI while keeping bytes and slot costs under control, and manage Secret Manager plus least-privilege IAM bindings.",
+    "developerName": "Caeros",
+    "category": "Infrastructure",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://cloud.google.com",
+    "privacyPolicyUrl": "https://policies.google.com/privacy",
+    "termsOfServiceUrl": "https://cloud.google.com/terms",
+    "defaultPrompt": [
+      "Deploy this repo to Cloud Run with secrets from Secret Manager",
+      "Set up gcloud and Application Default Credentials on this machine",
+      "Estimate and cap the cost of my BigQuery queries before I run them"
+    ],
+    "brandColor": "#4285F4",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "ramp",
+  "version": "0.1.0",
+  "description": "Work with the Ramp corporate spend platform: developer API, spend analysis, and the official Ramp MCP server.",
+  "keywords": ["ramp", "spend management", "corporate cards", "expenses", "reimbursements", "transactions", "finance", "accounting"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.ramp.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Ramp",
+    "shortDescription": "Query Ramp spend data: transactions, cards, reimbursements, reporting.",
+    "longDescription": "Connects Caeros to Ramp's official hosted MCP server (mcp.ramp.com) with your own Ramp account via OAuth, and adds three developer skills: the Ramp developer API (OAuth flows, scopes, transactions, cards, reimbursements), read-only spend analysis and reporting patterns, and developer app setup with sandbox testing. Access mirrors your Ramp role. Built for analysis and integration work; it does not move money or initiate payments.",
+    "developerName": "Caeros",
+    "category": "Payments",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://ramp.com",
+    "privacyPolicyUrl": "https://ramp.com/legal/privacy-policy",
+    "termsOfServiceUrl": "https://ramp.com/legal/platform-agreement",
+    "defaultPrompt": [
+      "Pull last month's Ramp transactions and summarize spend by merchant",
+      "Set up OAuth for the Ramp developer API with the right scopes",
+      "Find Ramp transactions missing receipts or memos and draft reminders"
+    ],
+    "brandColor": "#1A1A1A",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

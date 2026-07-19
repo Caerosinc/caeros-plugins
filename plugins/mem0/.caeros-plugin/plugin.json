@@ -1,0 +1,32 @@
+{
+  "name": "mem0",
+  "version": "0.1.0",
+  "description": "Give AI apps persistent memory with Mem0: add, search, and manage memories across users, agents, and sessions.",
+  "keywords": ["mem0", "memory", "llm ops", "personalization", "agents", "openmemory", "vector search", "context"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.mem0.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Mem0",
+    "shortDescription": "Persistent memory for AI apps: add, search, and manage memories.",
+    "longDescription": "Work with Mem0 from Caeros: integrate the memory layer into your apps with the Python and JS SDKs (add and search memories scoped to users, agents, and sessions), run the local-first OpenMemory server for private cross-tool memory, and manage keys for the Mem0 platform. Connects to Mem0's official hosted MCP server (mcp.mem0.ai) exposing the full memory lifecycle as tools.",
+    "developerName": "Caeros",
+    "category": "LLM Ops",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://mem0.ai",
+    "defaultPrompt": [
+      "Add Mem0 memory to my chatbot so it remembers user preferences",
+      "Design memory scopes for my multi-agent app using user_id, agent_id, and run_id",
+      "Set up the local OpenMemory server for private cross-tool memory"
+    ],
+    "brandColor": "#0D9488",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

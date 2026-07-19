@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "revenuecat": {
+      "transport": "url",
+      "url": "https://mcp.revenuecat.ai/mcp"
+    }
+  }
+}

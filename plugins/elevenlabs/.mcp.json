@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "elevenlabs": {
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["elevenlabs-mcp"]
+    }
+  }
+}

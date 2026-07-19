@@ -1,0 +1,32 @@
+{
+  "name": "langfuse",
+  "version": "0.1.0",
+  "description": "Instrument, evaluate, and manage LLM applications with the open-source Langfuse platform.",
+  "keywords": ["langfuse", "llm ops", "observability", "tracing", "prompt management", "evals", "datasets", "opentelemetry"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["langfuse.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Langfuse",
+    "shortDescription": "Trace, evaluate, and manage prompts for LLM apps with Langfuse.",
+    "longDescription": "Work with Langfuse from Caeros: instrument Python and JS applications with the OpenTelemetry-based SDKs (decorators, spans, generations, framework integrations), manage versioned prompts with labels and caching, and run evaluations with scores, LLM-as-a-judge, datasets, and experiments. Includes setup guidance for Langfuse Cloud and self-hosting, plus Langfuse's public Docs MCP server for always-current documentation lookups.",
+    "developerName": "Caeros",
+    "category": "LLM Ops",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://langfuse.com",
+    "defaultPrompt": [
+      "Add Langfuse tracing to my Python LLM pipeline",
+      "Move my hardcoded prompts into Langfuse prompt management with a production label",
+      "Set up an LLM-as-a-judge evaluator and a dataset experiment in Langfuse"
+    ],
+    "brandColor": "#7C3AED",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

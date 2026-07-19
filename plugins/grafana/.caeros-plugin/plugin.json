@@ -1,0 +1,32 @@
+{
+  "name": "grafana",
+  "version": "0.1.0",
+  "description": "Build dashboards, query metrics and logs, and manage alerting in Grafana.",
+  "keywords": ["grafana", "observability", "dashboards", "promql", "loki", "logql", "alerting", "prometheus"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Grafana",
+    "shortDescription": "Dashboards, PromQL and LogQL queries, and alerting for Grafana.",
+    "longDescription": "Work with Grafana from Caeros: author and provision dashboards with the JSON model and template variables, write PromQL and LogQL queries against Prometheus and Loki data sources, and manage alert rules, contact points, and notification policies. Connects to Grafana's official mcp-grafana server (run locally over stdio via Docker) so agents can search dashboards, query data sources, and inspect alerts against your own Grafana instance or Grafana Cloud.",
+    "developerName": "Caeros",
+    "category": "Observability",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://grafana.com",
+    "defaultPrompt": [
+      "Build a Grafana dashboard JSON for my service's latency, traffic, and errors",
+      "Write a PromQL query for p95 request latency by route",
+      "Set up a Grafana alert rule with a Slack contact point for error spikes"
+    ],
+    "brandColor": "#F46800",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

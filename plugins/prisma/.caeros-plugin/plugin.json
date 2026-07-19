@@ -1,0 +1,32 @@
+{
+  "name": "prisma",
+  "version": "0.1.0",
+  "description": "Model, migrate, and query databases with Prisma ORM and Prisma Postgres through Prisma's official MCP server.",
+  "keywords": ["prisma", "orm", "postgres", "database", "migrations", "typescript", "schema", "prisma postgres"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Prisma",
+    "shortDescription": "Schema modeling, migrations, typed queries, and Prisma Postgres.",
+    "longDescription": "Connects Caeros to Prisma's official local MCP server (built into the Prisma CLI, npx prisma mcp) for migration status, migrate dev/reset, Prisma Postgres account operations, and documentation search. Ships skills for schema.prisma modeling and relations, the migrations workflow, efficient typed queries with transactions and N+1 avoidance, Prisma Postgres setup, and troubleshooting drift, shadow databases, and connection pooling.",
+    "developerName": "Caeros",
+    "category": "Databases",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.prisma.io",
+    "defaultPrompt": [
+      "Review my schema.prisma and propose indexes and relation fixes",
+      "Create a migration that adds {model} with a relation to {other model}",
+      "My Prisma migration failed with drift detected, walk me through fixing it"
+    ],
+    "brandColor": "#16A394",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

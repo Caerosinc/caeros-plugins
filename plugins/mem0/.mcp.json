@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mem0": {
+      "transport": "url",
+      "url": "https://mcp.mem0.ai/mcp"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "exa",
+  "version": "0.1.0",
+  "description": "Neural web search and research over the live web with Exa.",
+  "keywords": ["exa", "search", "neural search", "research", "web data", "highlights", "websets", "company research"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.exa.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Exa",
+    "shortDescription": "Meaning-based web search with clean content, highlights, and research modes.",
+    "longDescription": "Connects Caeros to Exa's official MCP server (mcp.exa.ai) for search built for agents. Query by meaning rather than keywords, pull clean page text and relevance-scored highlights, filter by domain, date, and category, and step up to Exa's deep research modes for multi-source synthesis. Skills cover the search API, key setup, and research patterns for company and topic deep dives.",
+    "developerName": "Caeros",
+    "category": "Web Data",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://exa.ai",
+    "defaultPrompt": [
+      "Find recent research papers about {topic} and pull key highlights",
+      "Research {company}: product, funding, competitors, latest news",
+      "Search only academic and .gov sources from the last month for {topic}"
+    ],
+    "brandColor": "#254BF1",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

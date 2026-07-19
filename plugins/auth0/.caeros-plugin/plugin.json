@@ -1,0 +1,34 @@
+{
+  "name": "auth0",
+  "version": "0.1.0",
+  "description": "Integrate and operate Auth0: app quickstarts, Actions, custom claims, and tenant management.",
+  "keywords": ["auth0", "auth", "authentication", "oidc", "oauth", "actions", "jwt", "spa", "api", "tenants"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Auth0",
+    "shortDescription": "Add Auth0 login to SPAs, web apps, and APIs; write Actions; manage tenants.",
+    "longDescription": "Connects Caeros to the official Auth0 MCP server (@auth0/auth0-mcp-server) so you can manage applications, Actions, and logs on your own tenant with device-flow auth and read-only or scoped tool modes. The skills cover current SDK integration patterns for SPAs (auth0-react, auth0-spa-js), regular web apps (nextjs-auth0 v4, express-openid-connect), and APIs (express-oauth2-jwt-bearer), plus Actions with custom claims, rules migration, and tenant, application, and CLI setup.",
+    "developerName": "Caeros",
+    "category": "Auth",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://auth0.com",
+    "privacyPolicyUrl": "https://www.okta.com/privacy-policy/",
+    "termsOfServiceUrl": "https://auth0.com/legal",
+    "defaultPrompt": [
+      "Add Auth0 login to my Next.js app with the v4 SDK",
+      "Write a post-login Action that adds custom claims to my tokens",
+      "Audit my Auth0 tenant's applications and callback URLs"
+    ],
+    "brandColor": "#EB5424",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

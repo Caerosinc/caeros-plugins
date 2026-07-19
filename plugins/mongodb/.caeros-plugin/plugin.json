@@ -1,0 +1,32 @@
+{
+  "name": "mongodb",
+  "version": "0.1.0",
+  "description": "Query, model, and manage MongoDB and Atlas through the official MongoDB MCP server.",
+  "keywords": ["mongodb", "atlas", "database", "nosql", "documents", "aggregation", "vector search", "mongosh"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "MongoDB",
+    "shortDescription": "Query, model, and manage MongoDB databases and Atlas clusters.",
+    "longDescription": "Connects Caeros to the official MongoDB MCP server (mongodb-mcp-server on npm) against your own deployment: local, self-hosted, or Atlas. Run finds and aggregation pipelines, inspect collection schemas and indexes, and manage Atlas clusters with service-account credentials. Ships skills for query and pipeline craft, document modeling (embedding vs referencing, validation), Atlas operations including vector search, and least-privilege connection setup. Read-only mode is one flag away and recommended by default.",
+    "developerName": "Caeros",
+    "category": "Databases",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.mongodb.com",
+    "defaultPrompt": [
+      "Show the schema and indexes of my {collection} collection and suggest improvements",
+      "Write an aggregation pipeline that groups {collection} by {field} with monthly totals",
+      "Set up a least-privilege MongoDB user and wire the MCP server to it"
+    ],
+    "brandColor": "#00684A",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

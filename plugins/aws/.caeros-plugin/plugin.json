@@ -1,0 +1,34 @@
+{
+  "name": "aws",
+  "version": "0.1.0",
+  "description": "Build, deploy, and operate on AWS: CDK, serverless, databases, containers, and the aws CLI.",
+  "keywords": ["aws", "cdk", "cloudformation", "lambda", "serverless", "dynamodb", "aurora", "ecs", "fargate", "infrastructure", "cloud"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["knowledge-mcp.global.api.aws"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "AWS",
+    "shortDescription": "Build and ship on AWS: CDK infrastructure, serverless, databases, and container deploys.",
+    "longDescription": "Work with AWS from Caeros: author infrastructure with CDK v2 and CloudFormation, build serverless systems on Lambda, API Gateway, Step Functions, and EventBridge with SAM, pick and operate the right database (DynamoDB, Aurora, Aurora DSQL, RDS, ElastiCache), deploy containers to ECS on Fargate with ECR and proper IAM roles, and keep aws CLI v2 credentials clean with IAM Identity Center SSO. Includes AWS's official hosted Knowledge MCP server for grounded, current documentation lookups.",
+    "developerName": "Caeros",
+    "category": "Infrastructure",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://aws.amazon.com",
+    "privacyPolicyUrl": "https://aws.amazon.com/privacy/",
+    "termsOfServiceUrl": "https://aws.amazon.com/service-terms/",
+    "defaultPrompt": [
+      "Scaffold a CDK stack for an API Gateway + Lambda + DynamoDB service",
+      "My ECS Fargate deployment is stuck in a failed rollout, help me debug it",
+      "Which AWS database should I use for a multi-region user profile store?"
+    ],
+    "brandColor": "#FF9900",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

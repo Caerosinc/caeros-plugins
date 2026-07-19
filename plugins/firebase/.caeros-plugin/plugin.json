@@ -1,0 +1,32 @@
+{
+  "name": "firebase",
+  "version": "0.1.0",
+  "description": "Build and operate Firebase projects, Firestore, Auth, Hosting, Functions, through the official Firebase MCP server.",
+  "keywords": ["firebase", "firestore", "authentication", "hosting", "cloud functions", "app hosting", "emulators", "security rules"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Firebase",
+    "shortDescription": "Work with Firestore, Auth, Hosting, and Cloud Functions on your Firebase projects.",
+    "longDescription": "Connects Caeros to the official Firebase MCP server (built into firebase-tools, npx firebase-tools mcp) using your own Firebase CLI login. Manage projects, query and model Firestore, validate security rules, administer Auth users and custom claims, and deploy Hosting, Cloud Functions v2, and App Hosting. Ships skills for CLI and emulator setup, Firestore modeling and rules, authentication patterns, and the deploy surfaces.",
+    "developerName": "Caeros",
+    "category": "Databases",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://firebase.google.com",
+    "defaultPrompt": [
+      "Review my Firestore security rules for holes and missing tests",
+      "Model {feature} in Firestore with the queries and indexes it needs",
+      "Set up the Firebase emulators and run my app against them"
+    ],
+    "brandColor": "#FF8F00",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

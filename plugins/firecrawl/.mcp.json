@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "firecrawl": {
+      "transport": "url",
+      "url": "https://mcp.firecrawl.dev/v2/mcp"
+    }
+  }
+}

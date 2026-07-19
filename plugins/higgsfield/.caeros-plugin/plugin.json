@@ -1,0 +1,32 @@
+{
+  "name": "higgsfield",
+  "version": "0.1.0",
+  "description": "Generate images and videos with Higgsfield's hosted MCP server and Cloud API.",
+  "keywords": ["higgsfield", "image generation", "video generation", "soul", "cinema studio", "kling", "veo", "characters", "ai media"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.higgsfield.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Higgsfield",
+    "shortDescription": "Cinematic image and video generation with 30+ models from one connector.",
+    "longDescription": "Connects Caeros to Higgsfield's official hosted MCP server (mcp.higgsfield.ai) with your Higgsfield account. Generate images up to 4K and videos up to 15 seconds across 30+ models (Soul, Cinema Studio, Flux, Seedream, Kling, Minimax Hailuo, Veo, and more), train consistent Soul characters, and let the agent pick the right model or name one yourself. Sign in with OAuth: no API keys, generations draw from your existing plan credits. Skills cover generation workflows, Cloud API key setup for direct integrations, and troubleshooting.",
+    "developerName": "Caeros",
+    "category": "AI & Media",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://higgsfield.ai",
+    "defaultPrompt": [
+      "Generate a cinematic 4K hero image of {product} on a dark studio background",
+      "Animate this image into a 10 second video with a slow dolly-in",
+      "Which Higgsfield model should I use for a photorealistic character series?"
+    ],
+    "brandColor": "#18181B",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

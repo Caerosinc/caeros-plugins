@@ -1,0 +1,32 @@
+{
+  "name": "braintrust",
+  "version": "0.1.0",
+  "description": "Evaluate and observe AI products with Braintrust evals, logging, and datasets.",
+  "keywords": ["braintrust", "llm ops", "evals", "autoevals", "scorers", "logging", "tracing", "datasets"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["api.braintrust.dev"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Braintrust",
+    "shortDescription": "Run evals, score outputs, and trace production AI with Braintrust.",
+    "longDescription": "Work with Braintrust from Caeros: write Eval() experiments in TypeScript or Python with custom scorers and autoevals, instrument production logging with traces and online scoring, and manage projects and datasets. Connects to Braintrust's official hosted MCP server (api.braintrust.dev/mcp) so agents can query your projects, experiments, and logs with BTQL, resolve objects, and search the docs.",
+    "developerName": "Caeros",
+    "category": "LLM Ops",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.braintrust.dev",
+    "defaultPrompt": [
+      "Write a Braintrust eval for my summarization function with a custom scorer",
+      "Instrument my OpenAI calls with Braintrust logging and online scoring",
+      "Compare my last two Braintrust experiments and explain what regressed"
+    ],
+    "brandColor": "#2563EB",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

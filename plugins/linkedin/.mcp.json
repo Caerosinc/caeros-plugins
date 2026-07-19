@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "linkedin": {
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@pegasusheavy/linkedin-mcp@1.4.0"],
+      "env": {
+        "LINKEDIN_ACCESS_TOKEN": "$SECRET_TOKEN:LINKEDIN_MCP_TOKEN"
+      }
+    }
+  }
+}

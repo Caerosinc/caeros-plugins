@@ -1,0 +1,32 @@
+{
+  "name": "tavily",
+  "version": "0.1.0",
+  "description": "Real-time web search, extraction, and crawling built for AI agents with Tavily.",
+  "keywords": ["tavily", "search", "web search", "rag", "grounding", "extraction", "news", "web data"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.tavily.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Tavily",
+    "shortDescription": "Agent-grade web search with scored sources, extraction, and news filters.",
+    "longDescription": "Connects Caeros to Tavily's official MCP server (mcp.tavily.com) with OAuth sign-in. Search the live web with relevance-scored results, tune depth from ultra-fast lookups to advanced research, filter by topic (general, news, finance), time range, and domain, and extract clean markdown from pages you already know. Skills cover the search, extract, and crawl APIs, key setup, and agent patterns for RAG grounding, citations, and freshness.",
+    "developerName": "Caeros",
+    "category": "Web Data",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://tavily.com",
+    "defaultPrompt": [
+      "Search this week's news about {topic} and cite every source",
+      "Ground this claim with fresh web sources: {claim}",
+      "Extract clean markdown from {url} for my notes"
+    ],
+    "brandColor": "#468BFF",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

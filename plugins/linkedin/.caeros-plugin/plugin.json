@@ -1,0 +1,35 @@
+{
+  "name": "linkedin",
+  "version": "0.1.0",
+  "description": "Read your LinkedIn profile, share posts, and manage profile sections through the LinkedIn API.",
+  "keywords": ["linkedin", "social", "professional", "posts", "profile", "networking", "career"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["api.linkedin.com", "www.linkedin.com"],
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "LinkedIn",
+    "shortDescription": "Read your profile, share posts, and manage LinkedIn from Caeros.",
+    "longDescription": "Connects Caeros to LinkedIn through a local MCP server (@pegasusheavy/linkedin-mcp) signed in with your own LinkedIn account via OAuth. Fetch your profile and share posts out of the box; connection listing, people search, and profile-section editing tools are included and light up when the connected LinkedIn app has the corresponding LinkedIn API products approved.",
+    "developerName": "Caeros",
+    "category": "Social",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteUrl": "https://www.linkedin.com",
+    "privacyPolicyUrl": "https://www.linkedin.com/legal/privacy-policy",
+    "termsOfServiceUrl": "https://www.linkedin.com/legal/user-agreement",
+    "defaultPrompt": [
+      "Share a LinkedIn post announcing {topic}",
+      "What does my LinkedIn profile say about me?",
+      "Draft a LinkedIn post about this week's launch and post it after I approve"
+    ],
+    "brandColor": "#0A66C2",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

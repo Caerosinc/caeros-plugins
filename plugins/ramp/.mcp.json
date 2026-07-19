@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ramp": {
+      "transport": "url",
+      "url": "https://mcp.ramp.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "firecrawl",
+  "version": "0.1.0",
+  "description": "Scrape, crawl, map, and extract structured data from any website with Firecrawl.",
+  "keywords": ["firecrawl", "web scraping", "crawling", "site map", "extraction", "markdown", "search", "web data"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.firecrawl.dev"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Firecrawl",
+    "shortDescription": "Turn any website into clean markdown or structured data for agents.",
+    "longDescription": "Connects Caeros to Firecrawl's official MCP server (mcp.firecrawl.dev) for agent-grade web data. Scrape single pages into clean markdown, map entire sites, run multi-page crawls, search the web with optional scraping, and extract schema-shaped JSON with LLM extraction. Works keyless on a rate-limited free tier; add a Firecrawl API key for full quotas. Skills cover the v2 API, key setup, and crawl etiquette with cost control.",
+    "developerName": "Caeros",
+    "category": "Web Data",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://firecrawl.dev",
+    "defaultPrompt": [
+      "Scrape {url} and summarize it as clean markdown",
+      "Map {site} and list every page under /docs",
+      "Extract name, price, and features from these product pages into JSON"
+    ],
+    "brandColor": "#FA5C1F",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

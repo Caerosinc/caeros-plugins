@@ -1,0 +1,34 @@
+{
+  "name": "clerk",
+  "version": "0.1.0",
+  "description": "Build authentication with Clerk: Next.js integration, backend SDK, JWT verification, and webhooks.",
+  "keywords": ["clerk", "auth", "authentication", "nextjs", "sessions", "jwt", "webhooks", "user management"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.clerk.com"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Clerk",
+    "shortDescription": "Integrate Clerk auth: App Router setup, middleware, components, backend verification.",
+    "longDescription": "Connects Caeros to Clerk's official hosted MCP server (mcp.clerk.com) for current SDK snippets and implementation guides, and ships dense skills for the work itself: @clerk/nextjs App Router integration with clerkMiddleware, ClerkProvider and components, server-side auth() and route protection, the backend SDK with networkless JWT verification, webhook signature verification, and key management across development and production instances.",
+    "developerName": "Caeros",
+    "category": "Auth",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://clerk.com",
+    "privacyPolicyUrl": "https://clerk.com/legal/privacy",
+    "termsOfServiceUrl": "https://clerk.com/legal/terms",
+    "defaultPrompt": [
+      "Add Clerk auth to my Next.js App Router project",
+      "Verify Clerk session JWTs in my Express API",
+      "Set up Clerk webhooks and verify their signatures"
+    ],
+    "brandColor": "#6C47FF",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

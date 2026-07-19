@@ -1,0 +1,32 @@
+{
+  "name": "svelte",
+  "version": "0.1.0",
+  "description": "Build with Svelte 5 and SvelteKit: runes, snippets, routing, form actions, and testing, plus the official Svelte MCP server.",
+  "keywords": ["svelte", "sveltekit", "runes", "frontend", "framework", "reactivity", "vite", "testing"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.svelte.dev"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Svelte",
+    "shortDescription": "Write modern Svelte 5 and SvelteKit code with runes, snippets, and current docs.",
+    "longDescription": "Connects Caeros to the official Svelte MCP server (mcp.svelte.dev), which serves current Svelte 5 and SvelteKit documentation and static-analysis autofixes that catch outdated patterns. Skills cover the runes reactivity model ($state, $derived, $effect, $props), SvelteKit routing with load functions, form actions, and adapters, Svelte 5 component authoring with snippets and event attributes, and testing with Vitest.",
+    "developerName": "Caeros",
+    "category": "Frontend & Design",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://svelte.dev",
+    "defaultPrompt": [
+      "Migrate this Svelte component from stores and $: to Svelte 5 runes",
+      "Add a SvelteKit form action with validation and progressive enhancement",
+      "Write Vitest tests for this Svelte 5 component"
+    ],
+    "brandColor": "#FF3E00",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "workos",
+  "version": "0.1.0",
+  "description": "Build enterprise-ready auth with WorkOS: AuthKit, SSO, Directory Sync, RBAC, and Audit Logs.",
+  "keywords": ["workos", "auth", "authkit", "sso", "saml", "directory sync", "scim", "rbac", "audit logs", "enterprise"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "exec": true
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "WorkOS",
+    "shortDescription": "Integrate AuthKit, SSO, Directory Sync, RBAC, and Audit Logs with WorkOS.",
+    "longDescription": "Connects Caeros to the official WorkOS MCP documentation server for current SDK docs, examples, and changelogs, and ships dense skills for the build: AuthKit sessions with authkit-nextjs (withAuth, middleware, callback routes), enterprise SSO and Directory Sync with the Admin Portal, role-based access control with session claims, Audit Logs event streams, Vault for per-tenant secrets, plus API key management, environments, and signed webhooks.",
+    "developerName": "Caeros",
+    "category": "Auth",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://workos.com",
+    "privacyPolicyUrl": "https://workos.com/privacy",
+    "termsOfServiceUrl": "https://workos.com/terms",
+    "defaultPrompt": [
+      "Add AuthKit authentication to my Next.js app with protected routes",
+      "Wire up enterprise SSO and Directory Sync for a new customer org",
+      "Emit audit log events for the sensitive actions in my API"
+    ],
+    "brandColor": "#6363F1",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

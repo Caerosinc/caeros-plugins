@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "workos-docs": {
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@workos/mcp-docs-server"]
+    }
+  }
+}
