@@ -1,14 +1,8 @@
 {
   "name": "gmail",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Read, search, draft, and send Gmail through your connected Google account.",
-  "keywords": [
-    "gmail",
-    "email",
-    "google",
-    "inbox",
-    "productivity"
-  ],
+  "keywords": ["gmail", "email", "google", "inbox", "productivity"],
   "capabilities": {
     "skills": "./skills",
     "apps": "./apps"
@@ -21,11 +15,7 @@
     "developerName": "Caeros",
     "category": "Productivity",
     "brandColor": "#EA4335",
-    "capabilities": [
-      "Read",
-      "Write",
-      "Interactive"
-    ],
+    "capabilities": ["Read", "Write", "Interactive"],
     "defaultPrompt": [
       "Summarize my unread email from today",
       "Draft a reply to the latest email from my manager",

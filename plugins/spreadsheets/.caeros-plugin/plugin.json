@@ -1,6 +1,6 @@
 {
   "name": "spreadsheets",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Create, edit, analyze, verify, and export XLSX/CSV spreadsheets with formulas, formatting, charts, and workbook checks.",
   "keywords": ["spreadsheet", "spreadsheets", "excel", "xlsx", "csv", "workbook", "sheets", "google sheets", "financial model", "dashboard"],
   "capabilities": {
