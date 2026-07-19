@@ -29,7 +29,7 @@ It reads configuration from environment variables (preferred over CLI args,
 which leak into process lists):
 
 ```bash
-export MDB_MCP_CONNECTION_STRING="mongodb+srv://app:...@cluster0.abcde.mongodb.net/appdb"
+export MDB_MCP_CONNECTION_STRING="mongodb+srv://USER:PASS@YOUR-CLUSTER.mongodb.net/appdb"
 # Optional, for Atlas management tools (clusters, users, access lists):
 export MDB_MCP_API_CLIENT_ID="mdb_sa_id_..."      # Atlas service account
 export MDB_MCP_API_CLIENT_SECRET="mdb_sa_sk_..."
