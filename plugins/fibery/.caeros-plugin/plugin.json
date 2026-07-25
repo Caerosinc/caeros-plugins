@@ -1,0 +1,35 @@
+{
+  "name": "fibery",
+  "version": "0.1.0",
+  "description": "Query, build, and automate a Fibery workspace through Fibery's official MCP server.",
+  "keywords": ["fibery", "work management", "product management", "no-code", "database", "crm", "roadmap", "wiki", "reports", "views"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.fibery.io"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Fibery",
+    "shortDescription": "Read, model, and report on your Fibery workspace.",
+    "longDescription": "Connects Caeros to Fibery's official MCP server (mcp.fibery.io) with your own Fibery account. Fibery is a connected-database work platform: Spaces hold Databases, Databases hold Entities, and Relations turn them into one graph you can query across. This plugin covers the whole surface: read and search the workspace, run structured queries with the q/ language, create and update entities and documents, design schema (databases, fields, relations, workflows, formulas), build Views (grid, board, timeline, gantt, calendar, map, form), assemble Reports with charts and metrics, and handle imports, history, and access audits.",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteUrl": "https://fibery.com",
+    "privacyPolicyUrl": "https://fibery.io/privacy",
+    "termsOfServiceUrl": "https://fibery.io/terms",
+    "defaultPrompt": [
+      "What is in my Fibery workspace?",
+      "Show me every open Feature created in the last 30 days",
+      "Build a board of Tasks by state, grouped by assignee",
+      "Chart how long bugs spend in each state over the last quarter"
+    ],
+    "brandColor": "#15505E",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
