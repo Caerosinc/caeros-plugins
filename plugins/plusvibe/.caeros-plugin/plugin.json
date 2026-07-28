@@ -1,0 +1,32 @@
+{
+  "name": "plusvibe",
+  "version": "0.1.0",
+  "description": "Run cold email outreach on PlusVibe: workspaces, campaigns, sequences, leads, inbox replies, deliverability, and automation.",
+  "keywords": ["plusvibe", "cold email", "outreach", "campaigns", "leads", "sequences", "deliverability", "warmup", "unibox", "sales"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["api.plusvibe.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "PlusVibe",
+    "shortDescription": "Cold email campaigns, lead lists, reply triage, and inbox placement.",
+    "longDescription": "Connects Caeros to PlusVibe, the cold email outreach platform. Navigate workspaces, build a campaign from an empty draft through sequence, sending accounts, and schedule to launch, import and personalize lead lists with custom variables, triage replies in the unibox, and keep sending infrastructure healthy with warmup and inbox placement tests. Seven skills cover the platform end to end, and every send, launch, and delete is confirm-first.",
+    "developerName": "Caeros",
+    "category": "Sales",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteUrl": "https://plusvibe.ai",
+    "defaultPrompt": [
+      "Show me how my PlusVibe campaigns performed in the last 30 days",
+      "Build a 3-step campaign in {workspace} and hold it in draft for my review",
+      "Triage the replies that came in overnight and label them"
+    ],
+    "brandColor": "#FF4444",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

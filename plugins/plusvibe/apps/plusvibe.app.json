@@ -1,0 +1,128 @@
+{
+  "apps": [
+    {
+      "slug": "plusvibe",
+      "name": "PlusVibe",
+      "description": "Cold email outreach - workspaces, campaigns, sequences, leads, unibox replies, and sending infrastructure.",
+      "provider": "plusvibe",
+      "required": true,
+      "tools": [
+        "PLUSVIBE_GET_WORKSPACES",
+        "PLUSVIBE_ADD_WORKSPACE",
+
+        "PLUSVIBE_LIST_ALL_CAMPAIGNS",
+        "PLUSVIBE_CREATE_CAMPAIGN",
+        "PLUSVIBE_CREATE_SUBSEQUENCE",
+        "PLUSVIBE_GET_CAMPAIGN_NAME",
+        "PLUSVIBE_GET_CAMPAIGN_STATUS",
+        "PLUSVIBE_GET_CAMPAIGN_EMAIL_ACCOUNTS",
+        "PLUSVIBE_GET_CAMPAIGN_EMAILS",
+        "PLUSVIBE_SET_CAMPAIGN_NAME",
+        "PLUSVIBE_SET_CAMPAIGN_SCHEDULES",
+        "PLUSVIBE_UPDATE_CAMPAIGN",
+        "PLUSVIBE_LAUNCH_CAMPAIGN",
+        "PLUSVIBE_PAUSE_CAMPAIGN",
+        "PLUSVIBE_DELETE_CAMPAIGN",
+
+        "PLUSVIBE_ADD_LEADS",
+        "PLUSVIBE_ADD_LEADS_TO_SUBSEQUENCE",
+        "PLUSVIBE_GET_LEAD",
+        "PLUSVIBE_FETCH_WORKSPACE_LEADS",
+        "PLUSVIBE_COUNT_LEADS_BY_STATUS",
+        "PLUSVIBE_UPDATE_LEAD_DATA",
+        "PLUSVIBE_UPDATE_LEAD_STATUS",
+        "PLUSVIBE_DELETE_LEADS",
+
+        "PLUSVIBE_GET_CAMPAIGN_SUMMARY",
+        "PLUSVIBE_GET_CAMPAIGN_STATS",
+        "PLUSVIBE_GET_ALL_CAMPAIGN_STATS",
+
+        "PLUSVIBE_GET_UNIBOX_EMAILS",
+        "PLUSVIBE_GET_OTHER_UNIBOX_EMAILS",
+        "PLUSVIBE_GET_UNREAD_EMAIL_COUNT",
+        "PLUSVIBE_MARK_EMAIL_READ",
+        "PLUSVIBE_SAVE_EMAIL_DRAFT",
+        "PLUSVIBE_REPLY_EMAIL",
+        "PLUSVIBE_FORWARD_EMAIL",
+        "PLUSVIBE_COMPOSE_EMAIL",
+        "PLUSVIBE_DELETE_EMAIL",
+        "PLUSVIBE_DELETE_EMAIL_THREAD",
+
+        "PLUSVIBE_LIST_EMAIL_ACCOUNTS",
+        "PLUSVIBE_GET_EMAIL_ACCOUNT_STATUS",
+        "PLUSVIBE_GET_WARMUP_STATS",
+        "PLUSVIBE_CHECK_ACCOUNT_VITALS",
+        "PLUSVIBE_ENABLE_ACCOUNT_WARMUP",
+        "PLUSVIBE_PAUSE_ACCOUNT_WARMUP",
+        "PLUSVIBE_BULK_ADD_EMAIL_ACCOUNTS",
+        "PLUSVIBE_BULK_UPDATE_EMAIL_ACCOUNTS",
+        "PLUSVIBE_BULK_UPDATE_ACCOUNT_WARMUP",
+        "PLUSVIBE_BULK_ASSIGN_ACCOUNT_TAGS",
+        "PLUSVIBE_BULK_RECONNECT_EMAIL_ACCOUNTS",
+        "PLUSVIBE_DELETE_EMAIL_ACCOUNT",
+
+        "PLUSVIBE_LIST_BLOCKLIST",
+        "PLUSVIBE_ADD_BLOCKLIST_ENTRIES",
+        "PLUSVIBE_DELETE_BLOCKLIST_ENTRIES",
+
+        "PLUSVIBE_LIST_WEBHOOKS",
+        "PLUSVIBE_ADD_WEBHOOK",
+        "PLUSVIBE_DELETE_WEBHOOKS",
+
+        "PLUSVIBE_LIST_TAGS",
+        "PLUSVIBE_CREATE_TAG",
+        "PLUSVIBE_UPDATE_TAG",
+        "PLUSVIBE_DELETE_TAGS",
+
+        "PLUSVIBE_LIST_CLIENTS",
+        "PLUSVIBE_CREATE_CLIENT",
+        "PLUSVIBE_EDIT_CLIENT",
+        "PLUSVIBE_UPDATE_CLIENT_STATUS",
+        "PLUSVIBE_DELETE_CLIENT"
+      ],
+      "policy": {
+        "PLUSVIBE_GET_*": "allow",
+        "PLUSVIBE_LIST_*": "allow",
+        "PLUSVIBE_COUNT_*": "allow",
+        "PLUSVIBE_FETCH_*": "allow",
+
+        "PLUSVIBE_CREATE_CAMPAIGN": "ask_first",
+        "PLUSVIBE_UPDATE_CAMPAIGN": "ask_first",
+        "PLUSVIBE_SET_CAMPAIGN_SCHEDULES": "ask_first",
+        "PLUSVIBE_LAUNCH_CAMPAIGN": "ask_first",
+        "PLUSVIBE_PAUSE_CAMPAIGN": "ask_first",
+        "PLUSVIBE_DELETE_CAMPAIGN": "ask_first",
+
+        "PLUSVIBE_ADD_LEADS": "ask_first",
+        "PLUSVIBE_DELETE_LEADS": "ask_first",
+
+        "PLUSVIBE_SAVE_EMAIL_DRAFT": "allow",
+        "PLUSVIBE_MARK_EMAIL_READ": "allow",
+        "PLUSVIBE_REPLY_EMAIL": "ask_first",
+        "PLUSVIBE_FORWARD_EMAIL": "ask_first",
+        "PLUSVIBE_COMPOSE_EMAIL": "ask_first",
+        "PLUSVIBE_DELETE_EMAIL": "ask_first",
+        "PLUSVIBE_DELETE_EMAIL_THREAD": "ask_first",
+
+        "PLUSVIBE_BULK_*": "ask_first",
+        "PLUSVIBE_DELETE_EMAIL_ACCOUNT": "ask_first",
+        "PLUSVIBE_ENABLE_ACCOUNT_WARMUP": "ask_first",
+        "PLUSVIBE_PAUSE_ACCOUNT_WARMUP": "ask_first",
+
+        "PLUSVIBE_ADD_BLOCKLIST_ENTRIES": "allow",
+        "PLUSVIBE_DELETE_BLOCKLIST_ENTRIES": "ask_first",
+
+        "PLUSVIBE_ADD_WEBHOOK": "ask_first",
+        "PLUSVIBE_DELETE_WEBHOOKS": "ask_first",
+        "PLUSVIBE_DELETE_TAGS": "ask_first",
+
+        "PLUSVIBE_CREATE_CLIENT": "ask_first",
+        "PLUSVIBE_EDIT_CLIENT": "ask_first",
+        "PLUSVIBE_UPDATE_CLIENT_STATUS": "ask_first",
+        "PLUSVIBE_DELETE_CLIENT": "ask_first",
+        "PLUSVIBE_ADD_WORKSPACE": "ask_first"
+      },
+      "instructions": "./plusvibe-instructions.md"
+    }
+  ]
+}

@@ -131,6 +131,12 @@ Every plugin lives in its own directory under [`plugins/`](plugins/) with a
 | [`gmail`](plugins/gmail) | Gmail | Read, search, draft, and send Gmail through your connected Google account. | S, A |
 | [`spreadsheets`](plugins/spreadsheets) | Spreadsheets | Create, edit, analyze, verify, and export XLSX/CSV with formulas, formatting, and charts. | S |
 
+### Sales
+
+| Plugin | Name | What it does | Capabilities |
+| --- | --- | --- | --- |
+| [`plusvibe`](plugins/plusvibe) | PlusVibe | Cold email outreach: campaigns, sequences, lead lists, reply triage, and inbox placement. | S, A |
+
 ### Security
 
 | Plugin | Name | What it does | Capabilities |
