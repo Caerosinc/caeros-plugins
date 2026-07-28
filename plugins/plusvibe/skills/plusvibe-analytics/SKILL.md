@@ -10,22 +10,25 @@ scheduling, or launching campaigns, use `plusvibe-campaigns`. Two tool
 surfaces are valid: the remote MCP at `https://mcp.plusvibe.ai/mcp` with
 lower_snake_case names (primary naming below), and the native Caeros app
 provider (AppSlug `plusvibe`) with UPPER_SNAKE slugs, authed at Settings ->
-Apps -> "PlusVibe Auth". Every call takes `workspace_id`: resolve it once with
-`get_workspaces` (`PLUSVIBE_GET_WORKSPACES`), which keys workspaces by `_id`,
-and ask which one if the user did not name it. The wrong workspace returns
-plausible, wrong numbers.
+Apps -> "PlusVibe Auth". `get_workspaces` (`PLUSVIBE_GET_WORKSPACES`) is the
+one call taking no arguments at all; every other call here requires
+`workspace_id`. Resolve it once, read it off the `_id` key, and ask which
+workspace if the user did not name it. The wrong workspace returns plausible,
+wrong numbers.
 
-## Six doors onto the same numbers
+## Seven doors onto the same numbers
 
 | You need | Call | Cost |
 |---|---|---|
-| One campaign, lifetime totals | `get_campaign_summary` | cheapest |
-| Every campaign in the workspace, raw counts | `get_campaign_stats` | medium |
-| Rates plus a daily time series | `get_campaign_detailed_stats` | heavy |
-| Send and contact volume over a range | `get_campaign_analytic_count` | light |
-| One workspace-wide rollup | `get_analytics_stats` | light |
-| Leads broken down by status | `get_lead_count` | light |
-| Per-step and per-variation stats | `get_campaign_variations` | light |
+| One campaign, lifetime totals | `get_campaign_summary` (`PLUSVIBE_GET_CAMPAIGN_SUMMARY`) | cheapest |
+| Every campaign in the workspace, raw counts | `get_campaign_stats` (`PLUSVIBE_GET_CAMPAIGN_STATS`) | medium |
+| Rates plus a daily time series | `get_campaign_detailed_stats` (MCP only) | heavy |
+| Send and contact volume over a range | `get_campaign_analytic_count` (`PLUSVIBE_GET_CAMPAIGN_COUNT`) | light |
+| One workspace-wide rollup | `get_analytics_stats` (`PLUSVIBE_GET_ALL_CAMPAIGN_STATS`) | light |
+| Leads broken down by status | `get_lead_count` (`PLUSVIBE_COUNT_LEADS_BY_STATUS`) | light |
+| Per-step and per-variation stats | `get_campaign_variations` (MCP only) | light |
+
+Detailed stats and variations are MCP-only; do not invent a native slug.
 
 Required arguments differ, and that is the usual first error:
 `get_campaign_summary` takes no dates at all; `get_campaign_stats` and
@@ -39,10 +42,14 @@ returns `{header, chart}` with `chart` one row per day, so a 209-day window
 came back as 75 KB across 2,763 lines and overflowed the tool output limit.
 Keep windows to a month or less. It also takes optional `campaign_id`
 (omit for the workspace aggregate), `parent_campaign_id`, `status`, `tags`,
-`recp_provider`, and `cache`. **Its `status` filter matches current status,
-not status during the window**: a campaign that sent 400 emails on 6 Jan and
-is PAUSED today returns all zeros under `status: "ACTIVE"`. Live stats rows
-also carry `ARCHIVED`, beyond DRAFT, ACTIVE, PAUSED, INACTIVE, and COMPLETED.
+`recp_provider`, and `cache`. **The `status` filter has two traps.** In
+workspace-aggregate mode it matches current status, not status during the
+window: a campaign that sent 300 on 6 Jan and is PAUSED today returns zeros
+under `status: "ACTIVE"` and the real 300 under `status: "PAUSED"`. With
+`campaign_id` set the filter is ignored outright, so that same PAUSED campaign
+returns full numbers under `status: "DRAFT"`. Never treat `status` as evidence
+a campaign was or was not running. Live stats rows also carry `ARCHIVED`,
+beyond DRAFT, ACTIVE, PAUSED, INACTIVE, and COMPLETED.
 
 ## Field names change from tool to tool
 
@@ -77,13 +84,16 @@ Verified on one live campaign, one window, all four tools back to back:
 ## Date-scoped versus lifetime
 
 `get_campaign_stats` mixes both in one object. `sent_count`,
-`lead_contacted_count`, `replied_count`, and `bounced_count` respect the date
-range; `lead_count` and `completed_lead_count` are lifetime and ignore it;
-`new_lead_contacted_count` and `new_completed_lead_count` are window deltas. A
-2025 campaign therefore shows `lead_count: 1743` next to `sent_count: 0` for a
-2026 window, which is not a bug. `completed_lead_count` can also exceed
-`lead_count` (4,057 against 1,124 live), so never compute "completion %" from
-it. `get_campaign_summary` has no dates; it is all lifetime.
+`lead_contacted_count`, and `replied_count` respect the date range;
+`lead_count` and `completed_lead_count` are lifetime and ignore it;
+`new_lead_contacted_count` and `new_completed_lead_count` are window deltas.
+`bounced_count` is in neither camp: it read 0 on every window tried live, one
+of which showed 12 bounces in detailed stats. A 2025 campaign therefore shows
+`lead_count: 1743` next to `sent_count: 0` for a 2026 window, which is not a
+bug. `completed_lead_count` can also exceed `lead_count` (4,057 against 1,124
+live), so never compute "completion %" from it. `get_campaign_summary` has no
+dates; it is all lifetime. `get_analytics_stats` returns this same key set as
+one flat object, broken `bounced_count` included.
 
 ## Interpretation
 
@@ -118,8 +128,10 @@ limits of 4 and 5, so flag anything past 2 to 3 percent early.
 
 **Sent and leads are different units.** `sent_count` counts emails,
 `lead_count` counts people, and a multi-step sequence sends several emails per
-lead, so sent can exceed leads. Sent can also sit under contacted (3,523
-against 3,528 live). Use `lead_contacted_count` for coverage.
+lead, so sent can exceed leads. Sent can also sit under contacted, and the two
+tools disagree about it: summary returned `total_sent_emails: 3523` against
+`contacted: 3528` where stats put both at 3,528. Use `lead_contacted_count`
+for coverage.
 
 **`opportunity_val` is manually set**, the deal value someone attached via
 `patch_campaign_update`, named `total_opportunity_amt` in detailed stats. It

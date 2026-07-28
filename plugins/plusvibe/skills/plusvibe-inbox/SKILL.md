@@ -8,7 +8,7 @@ description: Read, triage, and respond to cold-outreach replies in the PlusVibe 
 The unibox is where cold outreach becomes a conversation with a real person.
 Every read here is cheap; every write lands in a stranger's mailbox.
 
-Every call needs a `workspace_id`. Resolve it with `get_workspaces`
+Every unibox call needs a `workspace_id`. Resolve it with `get_workspaces`
 (`PLUSVIBE_GET_WORKSPACES`), which returns workspaces keyed `_id`. Campaign
 ids come from `list_campaigns` (`PLUSVIBE_LIST_ALL_CAMPAIGNS`) keyed `id`,
 always with a small `limit`, since that tool returns full sequence HTML.
@@ -61,19 +61,19 @@ about four messages, so expect to paginate. Per message: `id`, `message_id`,
 - **Always pass `preview_only: "true"`** when scanning, a string not a
   boolean. It nulls `body` and keeps `content_preview`, which carries the
   quoted history and is enough to classify a reply.
-- `id` is what every unibox write takes. `message_id` is the RFC header value
-  and is not interchangeable. `thread_id` groups the conversation.
+- `id` is what `reply_to_email` and `forward_email` take as `reply_to_id`.
+  `message_id` is the RFC header value and is not interchangeable. `thread_id`
+  groups the conversation and keys `mark_email_read`.
 - `eaccount` comes back empty on campaign reply rows in production, so do not
   harvest a `from` address out of it. `list_email_accounts` can also return
   `{accounts: []}` in a workspace whose campaigns are actively sending.
 - **The `lead` filter silently falls back to the whole inbox.** An address
   matching no lead returns the unfiltered first page, not an empty set, so a
-  typo or a lead in another workspace yields a page of other people's mail
-  that looks like a successful filter. Matching is case-insensitive, so the
-  failure mode is no-match, not wrong-case. Confirm the address with
-  `find_lead_by_email` (`PLUSVIBE_GET_LEAD`), then discard any row whose
-  `lead` does not equal what you asked for. `label` filters correctly, and
-  when both are set an unmatched `lead` is dropped.
+  typo or a lead in another workspace yields other people's mail that looks
+  like a successful filter. Matching is case-insensitive, so the failure mode
+  is no-match, not wrong-case. Confirm the address with `find_lead_by_email`
+  (`PLUSVIBE_GET_LEAD`), then discard any row whose `lead` is not what you
+  asked for. `label` filters correctly; an unmatched `lead` is just dropped.
 
 ## The Other folder
 
@@ -90,11 +90,10 @@ point triage logic at those fields here. `eaccount` is populated here.
 `get_campaign_emails` (`PLUSVIBE_GET_CAMPAIGN_EMAILS`) takes `workspace_id`
 and `lead`, optionally `campaign_id`. It returns only the **outbound campaign
 sends** to that lead: `subject`, full `body`, `sent_on`, `current_step`,
-`variation`, `message_id`, `is_text`. It does not include the lead's replies,
-so pair it with `get_emails` scoped by `lead`, after the guard above, to see
-both sides. The sends show what was actually claimed with spintax already
-resolved, and `variation` says which A/B copy the person read. Read them
-before drafting, or you will promise something the sequence never said.
+`variation`, `message_id`, `is_text`. It excludes the lead's replies, so pair
+it with `get_emails` scoped by `lead`, after the guard above, for both sides.
+Spintax arrives already resolved, and `variation` names the A/B copy they
+read. Read before drafting, or you will promise what the sequence never said.
 
 ## Writing: the shapes differ per tool
 
@@ -109,9 +108,9 @@ before drafting, or you will promise something the sequence never said.
 `save_email_as_draft` is the odd one out twice over: `to`, `cc`, and `bcc` are
 arrays there and single strings everywhere else, and its `parent_message_id`
 is documented only as "the message ID this draft replies to". Try `id` first,
-since that is what every other unibox write takes, then `message_id`. Its MCP
-schema marks `subject` and `body` optional while the native operation requires
-both, so always send both.
+since that is what the reply and forward writes take, then `message_id`. Its
+MCP schema marks `subject` and `body` optional while the native operation
+requires both, so always send both.
 
 All bodies accept HTML. `mark_email_read` (`PLUSVIBE_MARK_EMAIL_READ`) marks
 every unread message in a thread. Its MCP schema lists only `workspace_id` as
@@ -168,13 +167,14 @@ why subsequences appear not to fire.
    row whose `lead` field does not match.
 4. Draft against the real claim in the sequence and answer their actual
    question. Do not restate the pitch.
-5. `save_email_as_draft` with `parent_message_id`, `from` set to the sending
-   account in the reply's `to_address_email_list`, `to` as a one-element
-   array, and both `subject` and `body`.
+5. `save_email_as_draft` with `parent_message_id`, `from` as the bare address
+   parsed out of the reply's `to_address_email_list`, which arrives as
+   `Name <addr>`, `to` as a one-element array, and both `subject` and `body`.
 6. Show the user the full draft. Only if they say send, call `reply_to_email`
    with `reply_to_id` set to the message `id` and `Re: ` on the subject.
 7. Set the label afterwards. Only when the thread is genuinely finished, call
-   `update_lead_status` with `new_status: "COMPLETED"`, its only valid value.
+   `update_lead_status` (`PLUSVIBE_UPDATE_LEAD_STATUS`) with the required
+   `campaign_id` and `new_status: "COMPLETED"`, its only valid value.
 
 ### Handle an unsubscribe request
 1. Treat it as urgent and finish it in one pass, not queued behind triage.
@@ -182,7 +182,7 @@ why subsequences appear not to fire.
    array. Use the bare address for one person, and a domain only when the user
    asked to drop the whole company, since that blocks every contact there.
 3. `update_lead_variables` to label the lead, and `update_lead_status` with
-   `COMPLETED` to stop the sequence for them.
+   `campaign_id` and `COMPLETED` to stop the sequence, once per campaign.
 4. Confirm with `get_blocklist` (`PLUSVIBE_LIST_BLOCKLIST`); rows key `value`.
 5. Do not send an acknowledgement. A "sorry, you are removed" email is
    another cold email to someone who just asked you to stop.

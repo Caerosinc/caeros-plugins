@@ -7,12 +7,11 @@ description: Import, read, personalize, relabel, and remove leads in PlusVibe co
 
 Everything that touches lead records inside a PlusVibe workspace. Every lead
 call needs a `workspace_id`; only `add_leads_to_campaign`, `add_single_lead`,
-and `update_lead_status` also require `campaign_id`, and everywhere else it is
-an optional scope filter. Resolve the workspace with `get_workspaces`
+and `update_lead_status` also require `campaign_id`, which elsewhere is an
+optional scope filter. Resolve the workspace with `get_workspaces`
 (`PLUSVIBE_GET_WORKSPACES`) and the campaign with `list_campaigns`
-(`PLUSVIBE_LIST_ALL_CAMPAIGNS`), always passing a small `limit`: that tool
-returns every campaign's full sequence bodies as raw HTML and will flood the
-context.
+(`PLUSVIBE_LIST_ALL_CAMPAIGNS`), always with a small `limit`: that tool returns
+every campaign's full sequence bodies as raw HTML and will flood the context.
 
 Remote MCP tools are lower_snake_case (`add_leads_to_campaign`). The native
 Caeros app provider `plusvibe` exposes the same operations as UPPER_SNAKE
@@ -60,10 +59,10 @@ fields carry generated suffixes rather than readable names.
 
 Values are not always plain strings. Enrichment-populated variables come back
 as objects shaped `{status: "SUCCESS", val: "...", msg: "Success"}`, so the
-usable text is `.val`; manually supplied variables are plain strings.
-`list_all_leads` never returns a custom variable's value. Some workspaces do
-surface their extra columns there un-prefixed and always empty (`segment`,
-`country_hq`, `email_draft`); those are not the stored keys. Only
+usable text is `.val`; manually supplied ones are plain strings.
+`list_all_leads` never returns a custom variable's value; the un-prefixed,
+always-empty extra columns some workspaces show there (`segment`,
+`country_hq`, `email_draft`) are not the stored keys. Only
 `find_lead_by_email` returns real values, inside `lead_data`.
 
 ## Dedupe, skip, and overwrite flags
@@ -92,10 +91,10 @@ the bulk tool.
 
 `list_all_leads` paginates with `page` and `limit`, orders with `sort` plus
 `direction`, and filters on `campaign_id`, `status`, `label`, `email`,
-`first_name`, `last_name`. It returns a projection: identity fields, progress
-(`current_step`, `sent_step`, `total_steps`, `next_email_time`),
-`replied_count`, `opened_count`, `bounce_msg`, `mx`, `camp_name`. No custom
-variables, no sequence bodies.
+`first_name`, `last_name`. It returns a projection: identity fields, `status`,
+`label`, progress (`current_step`, `sent_step`, `total_steps`,
+`next_email_time`), `replied_count`, `opened_count`, `bounce_msg`, `mx`,
+`camp_name`. No sequence bodies.
 
 `find_lead_by_email` takes `email` and paginates with `skip` and `limit`, not
 `page`. Leave `campaign_id` blank to find every campaign the address appears
@@ -125,9 +124,8 @@ lead's own `label` field holds the bare value `INTERESTED`.
   that same object as `{"label": "INTERESTED"}`. `campaign_id` is optional;
   pass it to scope the change when the address is in several campaigns.
 - `update_lead_status` accepts exactly one value for `new_status`:
-  `COMPLETED`. Nothing else is valid. It ends the sequence for that lead.
-  Unlike `update_lead_variables` it requires `campaign_id` alongside `email`,
-  so resolve the campaign before calling it.
+  `COMPLETED`. Nothing else is valid. It ends the sequence for that lead, and
+  requires `campaign_id` alongside `email`, unlike `update_lead_variables`.
 - `assign_lead_to_member` takes `lead_id` and a 24-hex `member_id`. Pass an
   empty string as `member_id` to unassign.
 - `add_leads_to_subsequence` takes `subseq_id` and `parent_lead_ids`, which
