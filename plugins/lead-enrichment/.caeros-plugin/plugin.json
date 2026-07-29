@@ -1,0 +1,30 @@
+{
+  "name": "lead-enrichment",
+  "version": "0.1.0",
+  "description": "Verify email lists at any scale with the Caeros enrichment engine: MillionVerifier and BounceBan, preview-first spend gates, cached verdicts, CSV export.",
+  "keywords": ["email verification", "enrichment", "leads", "deliverability", "millionverifier", "bounceban", "email list", "prospecting"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "secrets": ["MILLIONVERIFIER_API_KEY", "BOUNCEBAN_API_KEY"]
+  },
+  "runtime": "cloud",
+  "interface": {
+    "displayName": "Lead Enrichment",
+    "shortDescription": "Verify email lists server-side: preview a sample, launch a run, export the clean CSV.",
+    "longDescription": "Teaches Caeros agents the gateway enrichment engine: verify one email or a million, always preview a 10-address sample before spending provider credits, poll run counters instead of rows, and export results as CSV. Verdicts are normalized to deliverable / risky / undeliverable / unknown across MillionVerifier and BounceBan, results are cached for 30 days so re-runs are free, and syntactically invalid addresses are rejected locally at zero cost. Runs execute fully server-side and survive disconnects; provider API keys stay on the gateway and never reach the client.",
+    "developerName": "Caeros",
+    "category": "Sales",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Verify these emails and tell me which are safe to send to",
+      "Clean my lead list: run a sample preview first, then verify the rest",
+      "Export a CSV of the deliverable addresses from my last verification run"
+    ],
+    "brandColor": "#0F766E",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

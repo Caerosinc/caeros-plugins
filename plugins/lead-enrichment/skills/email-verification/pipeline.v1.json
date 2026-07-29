@@ -1,0 +1,11 @@
+{
+  "_notes": "Reference pipeline doc for the gateway enrichment engine (pkg/enrich Doc shape). POST /v1/enrich/runs builds this doc from the request; pass provider auto/millionverifier/bounceban at run creation and the gateway resolves it to a configured provider before validation.",
+  "name": "email-verification",
+  "steps": [
+    {
+      "id": "verify",
+      "op": "email.verify",
+      "provider": "millionverifier"
+    }
+  ]
+}
