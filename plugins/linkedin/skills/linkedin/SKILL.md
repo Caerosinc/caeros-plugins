@@ -50,16 +50,11 @@ or a manual path instead.
 - **Drafting beats posting.** When intent is ambiguous ("write a LinkedIn
   post about X"), deliver a draft first and post only on approval.
 
-## Workflows
+## Specialized skills
 
-### Share a post
-1. Draft the post text (respect LinkedIn's ~3000 character limit; lead with
-   the hook, short paragraphs, minimal hashtags).
-2. Show the final text and ask the user to confirm.
-3. Share with the posting tool and report back the result.
-
-### Profile summary ("what does my LinkedIn say about me?")
-1. Fetch the profile with the profile tool.
-2. Summarize what is actually returned; the standard API returns basic
-   OpenID fields (name, headline, picture, email), not the full public
-   profile. Say so when the user expects more.
+- `linkedin-posting` — drafting and sharing posts: voice, structure, the
+  confirm-before-share workflow, and post-failure handling.
+- `linkedin-profile` — reading the profile and (where the connected app has
+  partner access) editing profile sections.
+- `linkedin-network` — connections and people search (partner-gated), and
+  syncing LinkedIn contacts into the CRM.

@@ -1,0 +1,34 @@
+{
+  "name": "crm",
+  "version": "0.1.0",
+  "description": "Work your CRM (Twenty) from Caeros: contacts, companies, deals, notes, tasks, workflows, dashboards, and email.",
+  "keywords": ["crm", "twenty", "sales", "contacts", "companies", "deals", "opportunities", "pipeline", "notes", "tasks", "workflows", "dashboards"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["crm.caeros.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "CRM",
+    "shortDescription": "Manage contacts, companies, deals, tasks, and workflows in your CRM.",
+    "longDescription": "Connects Caeros to a Twenty CRM workspace over its MCP server, authenticated with your own API key. Search and manage every record type (people, companies, deals, opportunities, notes, tasks, and any custom object), run pipeline reports, build views and dashboards, automate with CRM workflows, and draft or send email through the CRM. The bundled server points at crm.caeros.ai; self-hosted workspaces connect by entering their own URL and API key in Settings > MCP.",
+    "developerName": "Caeros",
+    "category": "Sales",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteUrl": "https://crm.caeros.ai",
+    "privacyPolicyUrl": "https://twenty.com/legal/privacy",
+    "termsOfServiceUrl": "https://twenty.com/legal/terms",
+    "defaultPrompt": [
+      "Find everything we know about {company} in the CRM",
+      "What deals are closing this month? Summarize the pipeline",
+      "Log a note on {person} and create a follow-up task for Friday"
+    ],
+    "brandColor": "#5E51D6",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
