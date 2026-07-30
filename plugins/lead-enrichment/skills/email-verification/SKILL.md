@@ -79,3 +79,34 @@ Authorization: Bearer <session JWT>
 
 Optional `status=<verdict>` filters the export. For in-chat summaries
 prefer the counters from `enrich_run_status` over paging every row.
+
+## Domain discovery mode (find people AND their emails)
+
+When the user gives company domains instead of an email list ("find people
+at acme.com and verify their emails"), the same run pipeline does the whole
+job server-side: FullEnrich People Search discovers the people, FullEnrich
+waterfall enrichment finds their work emails, and the verification provider
+confirms them. One run id, one CSV.
+
+Flow, in order:
+
+1. `enrich_people_search` with the domains (plus title/seniority filters if
+   the user gave any). Show the user WHO was found and the TOTAL matching
+   count. This costs ~0.25 credits per person returned, so keep the limit
+   small (default 10).
+2. Quote the cost shape: ~0.25 credits per person discovered in the full
+   run, 1 FullEnrich credit per work email FOUND (misses are free), and
+   verification (cached addresses free). Wait for the user's go.
+3. `enrich_run_start` with `domains` (and `titles`/`seniorities`/
+   `max_people` as agreed) and `confirm_spend=true`.
+4. Poll `enrich_run_status`; report `found` / `not_found` alongside the
+   verify verdicts when it finishes.
+
+NEVER set `include_phones` (10 credits each) or `include_personal_emails`
+(3 credits) unless the user explicitly asked for phones or personal emails.
+
+The CSV for domain runs is one row per person (name, headline, LinkedIn
+URL, work email, find + verify verdicts) with a `payload_json` column
+carrying every field FullEnrich returned. If FullEnrich is not configured,
+`enrich_people_search` fails with `provider_unavailable` — load the
+`lead-enrichment-setup` skill (`FULLENRICH_API_KEY`).

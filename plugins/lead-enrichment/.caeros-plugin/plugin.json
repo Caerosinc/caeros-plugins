@@ -1,6 +1,6 @@
 {
   "name": "lead-enrichment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Verify email lists at any scale with the Caeros enrichment engine: MillionVerifier and BounceBan, preview-first spend gates, cached verdicts, CSV export.",
   "keywords": ["email verification", "enrichment", "leads", "deliverability", "millionverifier", "bounceban", "email list", "prospecting"],
   "capabilities": {
@@ -8,7 +8,7 @@
     "assets": "./assets"
   },
   "permissions": {
-    "secrets": ["MILLIONVERIFIER_API_KEY", "BOUNCEBAN_API_KEY"]
+    "secrets": ["MILLIONVERIFIER_API_KEY", "BOUNCEBAN_API_KEY", "FULLENRICH_API_KEY"]
   },
   "runtime": "cloud",
   "interface": {

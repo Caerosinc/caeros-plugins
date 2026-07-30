@@ -21,11 +21,11 @@ keys). If none is configured, run creation fails with
 
 The gateway resolves each provider key through a chain, first hit wins:
 
-1. `CAEROSGW_MILLIONVERIFIER_SECRET_REF` / `CAEROSGW_BOUNCEBAN_SECRET_REF`
+1. `CAEROSGW_MILLIONVERIFIER_SECRET_REF` / `CAEROSGW_BOUNCEBAN_SECRET_REF` / `CAEROSGW_FULLENRICH_SECRET_REF`
    env vars holding an explicit secret reference.
-2. Plain `MILLIONVERIFIER_API_KEY` / `BOUNCEBAN_API_KEY` env vars
+2. Plain `MILLIONVERIFIER_API_KEY` / `BOUNCEBAN_API_KEY` / `FULLENRICH_API_KEY` env vars
    (local/dev).
-3. GCP Secret Manager secrets named `MILLIONVERIFIER_API_KEY` /
+3. GCP Secret Manager secrets named `MILLIONVERIFIER_API_KEY` / `FULLENRICH_API_KEY` /
    `BOUNCEBAN_API_KEY` in the gateway's project (production; the gateway
    service accounts need `roles/secretmanager.secretAccessor`).
 
