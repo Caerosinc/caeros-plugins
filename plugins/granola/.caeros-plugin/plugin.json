@@ -1,0 +1,34 @@
+{
+  "name": "granola",
+  "version": "0.1.0",
+  "description": "Search, read, and ask questions across your Granola meeting notes, transcripts, and folders.",
+  "keywords": ["granola", "meetings", "meeting notes", "transcripts", "summaries", "action items", "folders", "productivity"],
+  "capabilities": {
+    "skills": "./skills",
+    "mcpServers": "./.mcp.json",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "network": ["mcp.granola.ai"]
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Granola",
+    "shortDescription": "Search, read, and ask questions across your Granola meeting notes.",
+    "longDescription": "Connects Caeros to Granola's official MCP server (mcp.granola.ai/mcp) with your own Granola account via browser sign-in. Ask questions across your whole meeting history, list meetings by date, title, attendee, or folder, read private and summarized notes with attendees and action items, and pull exact quotes from full transcripts (paid plans). Read-only by design: the connection never modifies your notes.",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "capabilities": ["Read", "Interactive"],
+    "websiteUrl": "https://www.granola.ai",
+    "privacyPolicyUrl": "https://www.granola.ai/privacy",
+    "termsOfServiceUrl": "https://www.granola.ai/terms",
+    "defaultPrompt": [
+      "What did we decide in my last meeting?",
+      "Summarize this week's meetings and the open action items",
+      "Find every meeting where we discussed {topic} and pull the key quotes"
+    ],
+    "brandColor": "#1C1B17",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
