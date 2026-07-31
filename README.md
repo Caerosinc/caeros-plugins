@@ -1,15 +1,38 @@
 # Caeros Plugins
 
 The curated plugin marketplace for [Caeros](https://caeros.com). This repository
-hosts the official, first-party plugin collection: 41 plugins that add skills,
-slash commands, MCP server connections, apps, and assets to your Caeros client.
+hosts the official, first-party plugin collection: **46 plugins** that add
+skills, slash commands, MCP server connections, apps, and assets to your Caeros
+client.
 
+Plugins are how you extend Caeros with the tools and workflows you already use —
+databases, observability platforms, payment stacks, AI model providers, sales
+and CRM tooling, and more. Each plugin is a self-contained directory holding a
+manifest plus the capability files it ships, so it can be versioned, reviewed,
+and installed like any other package.
+
+- [What's in a plugin](#whats-in-a-plugin)
 - [Quick start](#quick-start)
 - [Plugin catalog](#plugin-catalog)
 - [Anatomy of a plugin](#anatomy-of-a-plugin)
 - [Authoring your own plugin](#authoring-your-own-plugin)
 - [Contributing](#contributing)
 - [Distribution and updates](#distribution-and-updates)
+- [FAQ](#faq)
+
+## What's in a plugin
+
+Every plugin ships one or more of these capabilities:
+
+| Capability | What it adds to Caeros | Example |
+| --- | --- | --- |
+| **Skills** | Packed reference material the agent loads on demand; the `description` frontmatter decides when it triggers. | [`plugins/granola/skills/`](plugins/granola/skills) |
+| **Slash commands** | Prompt templates you invoke with `/command`. | [`plugins/automations/commands/`](plugins/automations/commands) |
+| **MCP servers** | Model Context Protocol server connections — a remote URL or a local `stdio` process. | [`plugins/aws/.mcp.json`](plugins/aws/.mcp.json) |
+| **Apps** | App connectors (`.app.json`) that bind to your connected accounts. | [`plugins/gmail/apps/`](plugins/gmail/apps) |
+
+The catalog below marks each plugin's capabilities as **S** = skills,
+**M** = bundled MCP server(s), **C** = slash commands, **A** = apps/connectors.
 
 ## Quick start
 
@@ -129,12 +152,15 @@ Every plugin lives in its own directory under [`plugins/`](plugins/) with a
 | --- | --- | --- | --- |
 | [`fibery`](plugins/fibery) | Fibery | Query, build, and automate a Fibery workspace through Fibery's official MCP server. | S, M |
 | [`gmail`](plugins/gmail) | Gmail | Read, search, draft, and send Gmail through your connected Google account. | S, A |
+| [`granola`](plugins/granola) | Granola | Search, read, and ask questions across your Granola meeting notes, transcripts, and folders via Granola's official MCP server. Read-only by design. | S, M |
 | [`spreadsheets`](plugins/spreadsheets) | Spreadsheets | Create, edit, analyze, verify, and export XLSX/CSV with formulas, formatting, and charts. | S |
 
 ### Sales
 
 | Plugin | Name | What it does | Capabilities |
 | --- | --- | --- | --- |
+| [`crm`](plugins/crm) | CRM (Twenty) | Work your Twenty CRM: contacts, companies, deals, notes, tasks, workflows, dashboards, and email through the official Twenty MCP server. | S, M |
+| [`lead-enrichment`](plugins/lead-enrichment) | Lead Enrichment | Verify email lists at any scale: preview a sample before spending credits, verify server-side with MillionVerifier/BounceBan, export the clean CSV. | S |
 | [`plusvibe`](plugins/plusvibe) | PlusVibe | Cold email outreach: campaigns, sequences, lead lists, reply triage, and inbox placement. | S, A |
 
 ### Security
@@ -346,3 +372,34 @@ Contributions are welcome — both new plugins and improvements to existing ones
 - **Compatibility**: Caeros also loads plugin bundles authored for other
   harnesses (`.codex-plugin/`, `.cursor-plugin/`, `.claude-plugin/` manifests),
   so skills and MCP configs written elsewhere generally work unchanged.
+
+## FAQ
+
+**How do plugin updates reach my client?**
+Clients registered against this repo as a git marketplace re-fetch it with a
+shallow clone and compare each plugin's content digest. Only plugins whose
+contents actually changed are updated, so an update never rewrites identical
+files.
+
+**What does the `runtime` field mean?**
+`"local"` plugins run inside your Caeros client, with their declared
+permissions enforced locally. `"cloud"` plugins (like
+[`lead-enrichment`](plugins/lead-enrichment)) execute server-side on the Caeros
+gateway — long-running work survives disconnects, and provider API keys stay on
+the gateway instead of your machine.
+
+**What permissions can a plugin request?**
+The manifest's `permissions` block scopes `fs` (path scopes), `network`
+(allowed hosts), `secrets` (readable secret keys), `tools` (tool-name globs),
+and `exec` (shell access). Permissions are granted at install time and enforced
+by the runtime.
+
+**Can I reuse a plugin written for another harness?**
+Yes — Caeros loads `.codex-plugin/`, `.cursor-plugin/`, and `.claude-plugin/`
+manifests in addition to `.caeros-plugin/`, so skills and MCP configs authored
+elsewhere generally work unchanged.
+
+**Where is the authoritative reference for authoring?**
+Install the [`plugin-dev`](plugins/plugin-dev) plugin and read its
+`create-caeros-plugin` skill — it covers scaffolding, the manifest schema, and
+publishing.
