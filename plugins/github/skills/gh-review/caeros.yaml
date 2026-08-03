@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Review"
+  short_description: "Review a pull request in chat"
+  default_prompt: "Use $gh-review to read this pull request and report correctness, security, and design problems."

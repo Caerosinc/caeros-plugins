@@ -1,7 +1,7 @@
 # Caeros Plugins
 
 The curated plugin marketplace for [Caeros](https://caeros.com). This repository
-hosts the official, first-party plugin collection: 41 plugins that add skills,
+hosts the official, first-party plugin collection: 47 plugins that add skills,
 slash commands, MCP server connections, apps, and assets to your Caeros client.
 
 - [Quick start](#quick-start)
@@ -74,6 +74,7 @@ Every plugin lives in its own directory under [`plugins/`](plugins/) with a
 | Plugin | Name | What it does | Capabilities |
 | --- | --- | --- | --- |
 | [`anthropic`](plugins/anthropic) | Anthropic Developers | Build AI apps and agents on the Claude API with Anthropic best practices. | S, A |
+| [`github`](plugins/github) | GitHub | Triage PRs and issues, debug failing checks, work review threads, and publish changes. Backed by the Caeros-native GitHub app. | S, A |
 | [`plugin-dev`](plugins/plugin-dev) | Caeros Plugin Dev | Toolkit for building Caeros plugins: scaffolding (`/new-plugin`), manifest schema reference, and publishing guides. | S, C |
 | [`xai`](plugins/xai) | xAI Developers | Build with xAI's Grok API — models, server-side search, and best practices. | S |
 
@@ -258,6 +259,58 @@ description: What the skill covers and when the agent should load it. The
 
 The body is reference material the agent reads when the skill triggers.
 ```
+
+A skill can also ship `skills/<skill-name>/caeros.yaml` with presentation
+metadata. Without it the storefront can only show the directory name, so
+`gh-address-comments` appears where "Review Follow-up" belongs. The frontmatter
+`name` and `description` stay as the model's routing signal and are not reused
+as UI copy.
+
+```yaml
+interface:
+  display_name: "Review Follow-up"
+  short_description: "Address actionable PR feedback"
+  default_prompt: "Use $gh-address-comments to work through unresolved PR feedback."
+```
+
+Icon paths (`icon_small`, `icon_large`) are resolved under the skill directory
+and are dropped if they point outside it, so put per-skill icons in the skill's
+own folder or leave them out and inherit the plugin logo.
+
+### Apps and connectors
+
+`apps/*.app.json` declares the app a plugin binds to. Two providers exist.
+
+`"provider": "composio"` routes through the Apps connector broker. `tools` and
+`policy` use provider tool slugs (`GMAIL_SEND_EMAIL`), and the user connects the
+account through the broker's OAuth flow.
+
+`"provider": "native"` binds to an app Caeros implements itself. Its tools are
+first-party and lower case (`github_ci_report`), its credential lives in the
+Caeros secret store, and no broker is in the path. Use it whenever Caeros
+already ships the integration: adding a broker hop on top would mean one more
+credential to hold and one more thing to fail. Only registered native apps are
+accepted, and an unknown slug is dropped with a log line rather than sitting in
+the UI looking connectable.
+
+```json
+{
+  "apps": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "description": "Pull requests, issues, reviews, and Actions.",
+      "provider": "native",
+      "required": true,
+      "tools": ["github_ci_report", "github_pull_request_feedback"],
+      "instructions": "./github-instructions.md"
+    }
+  ]
+}
+```
+
+`instructions` is injected into the agent's context only while the app is
+connected, so it costs nothing for users who never connect it.
 
 ### Slash commands
 

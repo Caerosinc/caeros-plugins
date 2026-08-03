@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Prep"
+  short_description: "Draft release notes from merged PRs"
+  default_prompt: "Use $gh-release to work out what is shipping since the last release and draft the notes."

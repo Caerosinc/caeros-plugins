@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Setup"
+  short_description: "Labels, protection, and CI scaffolding"
+  default_prompt: "Use $gh-repo-setup to check this repository's labels, branch protection, and CI, and propose what is missing."

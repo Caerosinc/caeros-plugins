@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Triage"
+  short_description: "Group, label, and prioritize issues"
+  default_prompt: "Use $gh-triage-issues to work the issue backlog and tell me what to act on next."

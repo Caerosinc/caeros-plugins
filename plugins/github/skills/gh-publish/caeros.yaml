@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish Changes"
+  short_description: "Commit, push, and open a draft PR"
+  default_prompt: "Use $gh-publish to confirm the intended changes, create a focused commit, push it, and open a draft pull request."

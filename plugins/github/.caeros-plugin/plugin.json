@@ -1,0 +1,44 @@
+{
+  "name": "github",
+  "version": "0.1.0",
+  "description": "Triage pull requests and issues, debug failing checks, work through review feedback, and publish changes, through the Caeros-native GitHub app.",
+  "keywords": [
+    "github",
+    "git",
+    "pull requests",
+    "pull-request",
+    "code review",
+    "review",
+    "ci",
+    "github actions",
+    "issues",
+    "source control",
+    "releases"
+  ],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "permissions": {},
+  "runtime": "local",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "Triage PRs, issues, CI, reviews, and publish flows.",
+    "longDescription": "Work GitHub from inside Caeros: triage pull requests and issues, debug failing Actions checks down to the failing log line, work through unresolved review threads, and publish changes as a draft PR. Backed by the Caeros-native GitHub app, so there is no connector broker in the path and no CLI login required. The gh CLI is used only as a fallback for the few things the API cannot reach.",
+    "developerName": "Caeros",
+    "category": "Developer Tools",
+    "brandColor": "#24292F",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteUrl": "https://github.com/",
+    "privacyPolicyUrl": "https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
+    "termsOfServiceUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg",
+    "defaultPrompt": [
+      "Summarize the open PRs in this repo and tell me what needs attention",
+      "Debug the failing checks on this PR",
+      "Work through the unresolved review comments on this PR"
+    ]
+  }
+}
