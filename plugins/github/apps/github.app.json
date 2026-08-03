@@ -1,0 +1,44 @@
+{
+  "apps": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "description": "Repositories, pull requests, issues, reviews, and Actions through the Caeros-native GitHub app.",
+      "provider": "native",
+      "required": true,
+      "tools": [
+        "github_list_repos",
+        "github_get_repo",
+        "github_list_branches",
+        "github_get_file",
+        "github_list_pull_requests",
+        "github_get_pull_request",
+        "github_list_pull_request_files",
+        "github_get_pull_request_diff",
+        "github_list_pr_checks",
+        "github_ci_report",
+        "github_list_workflow_runs",
+        "github_list_workflow_jobs",
+        "github_get_job_log",
+        "github_pull_request_feedback",
+        "github_list_review_comments",
+        "github_list_issues",
+        "github_get_issue",
+        "github_search_issues",
+        "github_create_branch",
+        "github_commit_files",
+        "github_create_pull_request",
+        "github_create_issue",
+        "github_create_pr_comment",
+        "github_reply_review_comment",
+        "github_submit_review",
+        "github_set_review_thread_resolution",
+        "github_add_labels",
+        "github_remove_label",
+        "github_rerun_workflow_run",
+        "github_cancel_workflow_run"
+      ],
+      "instructions": "./github-instructions.md"
+    }
+  ]
+}

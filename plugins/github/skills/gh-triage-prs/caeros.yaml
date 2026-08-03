@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Triage"
+  short_description: "Find the PRs that need attention"
+  default_prompt: "Use $gh-triage-prs to work the open pull requests and tell me which ones need action and from whom."

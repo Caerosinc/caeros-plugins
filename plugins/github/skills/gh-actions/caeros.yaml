@@ -1,0 +1,4 @@
+interface:
+  display_name: "Actions"
+  short_description: "Inspect and operate workflow runs"
+  default_prompt: "Use $gh-actions to inspect workflow runs on this branch and tell me what failed."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub"
+  short_description: "Triage PRs, issues, CI, and publish flows"
+  default_prompt: "Use $github to orient on this repository, summarize what needs attention, and pick the right GitHub workflow."
