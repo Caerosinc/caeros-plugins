@@ -47,7 +47,9 @@ verdict for 30 days, and exports CSV. You drive it with the native
 
 For a list produced by another task (file extraction, a scrape, an upstream
 agent), use a `workflow_run` task with `kind: "enrich"` — one task is the
-whole run, no per-row fan-out (never `foreach` over emails):
+whole run, no per-row fan-out (prefer the prompt carrying the whole list; a
+`foreach` on an enrich task is tolerated but collapses into that same
+single gateway run):
 
 ```json
 {"name":"verify-leads","tasks":[

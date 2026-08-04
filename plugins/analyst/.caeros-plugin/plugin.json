@@ -1,0 +1,37 @@
+{
+  "name": "analyst",
+  "version": "0.1.0",
+  "description": "Find ranked investors and their contacts with the Caeros Vault matcher: one hosted call runs semantic retrieval, portfolio scoring, and contact attach, then auto-exports the CSV.",
+  "keywords": ["investors", "investor match", "fundraising", "venture capital", "private markets", "family offices", "cap table", "vault", "investor contacts", "warm intro"],
+  "capabilities": {
+    "skills": "./skills",
+    "assets": "./assets"
+  },
+  "permissions": {
+    "tools": [
+      "caeros_investor_match",
+      "caeros_family_office_search",
+      "analyst_vault_query",
+      "analyst_vault_run_sql",
+      "analyst_export_csv",
+      "analyst_read_table_file"
+    ]
+  },
+  "runtime": "cloud",
+  "interface": {
+    "displayName": "Analyst",
+    "shortDescription": "Describe a company, get ranked investors and their contacts from the Caeros Vault.",
+    "longDescription": "Teaches Caeros agents the exact procedure for the Vault investor matcher. Give it a company brief (name, description, website, keywords, country) and one hosted call runs the whole pipeline: Conare embedding, semantic retrieval over the company and investor namespaces, portfolio hydration from the Vault, scoring, and contact attach. It returns ranked firms with named contacts and an auto-exported CSV. Contacts come only from the Vault, so nothing leaves the platform and no external data credits are spent. Also covers direct Vault SQL over the seven allowlisted views for counts, filters, and contact top-ups, plus semantic matching against the separate family-office universe.",
+    "developerName": "Caeros",
+    "category": "Finance",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": [
+      "Find investors for my company and give me their contacts",
+      "Match these family offices to our thesis and list who to contact",
+      "Which investors in the Vault already back companies like ours?"
+    ],
+    "brandColor": "#4338CA",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}
