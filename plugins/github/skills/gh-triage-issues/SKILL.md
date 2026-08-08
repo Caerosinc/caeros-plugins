@@ -1,6 +1,6 @@
 ---
 name: gh-triage-issues
-description: Work a GitHub issue backlog. Use when the user wants issues summarized, grouped, labeled, deduplicated, or prioritized, or wants to know what to work on next.
+description: Work a GitHub issue backlog. Use when the user asks to triage issues, or wants them summarized, grouped, labeled, deduplicated, or prioritized, wants to know what to do with each one, or wants to know what to work on next.
 ---
 
 # Issue Triage

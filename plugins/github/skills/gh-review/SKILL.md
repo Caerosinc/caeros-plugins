@@ -1,6 +1,6 @@
 ---
 name: gh-review
-description: Review a GitHub pull request for correctness, security, and design problems, and report the findings in chat. Use when the user asks to review a PR, asks what is wrong with a diff, or wants a second opinion before approving. Nothing is posted to GitHub unless the user explicitly asks.
+description: Review a GitHub pull request for correctness, security, and design problems, either reporting the findings in chat or posting them as a review on the pull request. Use when the user asks to review a PR, to post or leave a review on one, asks what is wrong with a diff, or wants a second opinion before approving. Nothing is posted to GitHub unless the user explicitly asks.
 ---
 
 # Review a Pull Request
