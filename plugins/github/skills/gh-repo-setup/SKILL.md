@@ -18,13 +18,16 @@ requests, and the files contributors look for.
 - `github_get_file` to read what is already configured before proposing
   anything. Repositories almost always have more set up than the user remembers.
 - `github_list_workflow_runs` to see which workflows actually run.
-- `github_commit_files` to add or update files on a branch, then
-  `github_create_pull_request` to propose them.
+- `github_create_branch` to start a branch, then edit the files in the
+  checkout, commit them, and push. There is no tool that writes file content:
+  file changes go through git, the same way any other code change does.
+- `github_create_pull_request` to propose the branch.
 - `github_add_labels` and `github_remove_label` for issue and PR labels.
 
-Branch protection and repository settings are NOT available as native tools.
-Those go through `gh api` or the GitHub web UI, and both are the user's call.
-Produce the exact command and let them run it.
+Branch protection and repository settings are NOT available as native tools,
+and they are the user's call regardless. Read the current state with
+`github_get_repo`, describe the change you would make, and let the user apply
+it in the GitHub web UI.
 
 ## Workflow
 

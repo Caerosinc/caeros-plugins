@@ -32,6 +32,13 @@ checkout for.
 
 Only on an explicit request: `github_submit_review`, `github_create_pr_comment`.
 
+When you do submit, put each finding on the line it is about, in the
+`comments` array of `github_submit_review`: `path`, `line` as of the HEAD
+commit, and `body`, plus `side: LEFT` for a deleted line and `start_line` to
+span several. Inline comments exist ONLY as part of the review that carries
+them, so a review submitted without that array leaves a wall of prose that
+nobody can reply to or resolve against a line.
+
 ## Workflow
 
 1. Read the intent: PR title, description, and linked issues.

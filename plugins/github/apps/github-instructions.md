@@ -1,15 +1,20 @@
 GitHub plugin guidance (active while the GitHub app is connected):
 
-- The GitHub app is native. Its tools are `github_*` and they call the GitHub
-  API directly with the token Caeros holds. There is no connector broker in the
-  path, and no `gh auth login` is required. Prefer these tools over shelling out.
+- The GitHub app is native and it is the ONLY route to GitHub in Caeros. Its
+  tools are `github_*`. They call the gateway, which re-checks the repository
+  grant and your role, then uses a credential scoped to that one repository and
+  that one permission. No connector broker is in the path and none can be: the
+  connected-Apps lane refuses GitHub outright. There is no `gh auth login` to do.
 - Use `gh` or `git` only for what the API cannot do: reading or changing the
-  local checkout, pushing a branch, `gh auth status`, and cross-repository or
-  fork pull request heads. If you find yourself running `gh api`, a native tool
+  local checkout, committing, pushing a branch, and cross-repository or fork
+  pull request heads. If you find yourself running `gh api`, a native tool
   almost certainly already covers it.
 - Reads run without asking. Every write asks first, including the small ones. A
-  label, a comment, or a resolved thread is still the user speaking on a shared
-  repository under their own account.
+  label, a comment, or a resolved thread is still a public action on a shared
+  repository.
+- Only the repositories the workspace enabled are reachable. `github_list_repos`
+  returns exactly that set, and anything outside it is refused however it is
+  named.
 - For CI, call `github_ci_report` first. It returns merged check state plus the
   failing job and a bounded log snippet in one call, so a separate checks call
   followed by a log call is usually wasted work.
@@ -23,9 +28,18 @@ GitHub plugin guidance (active while the GitHub app is connected):
 - Checks that report `isActions: false` come from an external provider such as
   Buildkite or Jenkins. Report the name and the details URL. Never describe the
   cause of a log you have not read.
-- Do not merge or close anything on the user's behalf. Caeros suggests, the
-  human acts. Say what you would merge and let them do it.
-- If the `github_*` tools are not available, the app is not connected. Tell the
-  user to set `GITHUB_TOKEN`, `GH_TOKEN`, or `GITHUB_PAT`, and
-  `GITHUB_API_URL` for GitHub Enterprise Server. Do not silently fall back to
-  scraping the web UI.
+- Merging is possible, and it is still the user's call. Merge only when the user
+  asked for this pull request to be merged; never because the checks went green
+  or because it looked ready. Before calling `github_merge_pull_request`, call
+  `github_get_pull_request` and pass its head sha as `expected_head_sha`, so a
+  push that lands in between fails the merge instead of shipping unreviewed
+  commits. If the merge comes back as not mergeable, report which gate is
+  blocking it and stop: retrying changes nothing.
+- If the `github_*` tools are missing, call `github_status`. It reports whether
+  GitHub is connected, which repositories are reachable, and what to do about
+  it. The fix is Settings, Source Control: connect GitHub, then enable
+  repositories. Setting `GITHUB_TOKEN`, `GH_TOKEN`, or `GITHUB_PAT` does
+  nothing; that credential lane was removed because it ignored every
+  per-repository access decision the product makes. Never fall back to scraping
+  the web UI, and never look for a connected-Apps route to GitHub: there is not
+  one.
