@@ -30,7 +30,7 @@ citations, don't restate engagement numbers the response didn't include.
 Caeros integrates xAI's X search natively. Once an xAI key is configured in
 Settings → Models:
 
-- Grok models (Grok 4.5, Grok Build) appear as selectable lanes.
+- Grok models (Grok 4.6, Grok 4.5, Grok Build) appear as selectable lanes.
 - X search runs as a server tool on those lanes — you'll see "Searched X" in
   the transcript when it fires.
 

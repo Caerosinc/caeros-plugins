@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "slashy": {
+      "transport": "url",
+      "url": "https://slashy.ctrlcenter.ai/mcp",
+      "authorization_token_secret_name": "SLASHY_MCP_TOKEN"
+    }
+  }
+}

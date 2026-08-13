@@ -22,7 +22,7 @@ limits live there too). Never commit a key or paste one into chat.
 
 Add the key under Settings → Models (xAI provider). That unlocks:
 
-- **Grok lanes**: Grok 4.5 and Grok Build as selectable models.
+- **Grok lanes**: Grok 4.6, Grok 4.5, and Grok Build as selectable models.
 - **Native X search**: server-side X search fires on Grok lanes ("Searched
   X" in the transcript) — no X account required.
 
@@ -32,7 +32,7 @@ from its own environment.
 ## Hygiene
 
 - One key per environment; rotate on exposure.
-- Watch spend at console.x.ai — Grok 4.5 prompts above 200K tokens bill at
+- Watch spend at console.x.ai — Grok 4.6 prompts at 200K tokens and above bill at
   double rates, which shows up as surprising line items.
 - If Grok lanes don't appear after adding the key, verify the key is active
   in console.x.ai and re-open model settings; a 401 in the app's logs means

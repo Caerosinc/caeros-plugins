@@ -1,0 +1,45 @@
+{
+  "name": "slashy",
+  "version": "0.1.0",
+  "description": "Work with email, calendars, contacts, meeting prep, research, reminders, and scheduled workflows through Slashy.",
+  "author": {
+    "name": "Slashy",
+    "url": "https://slashy.com"
+  },
+  "homepage": "https://help.slashy.com/features/integrations/mcp",
+  "repository": "https://github.com/Caerosinc/caeros",
+  "license": "Apache-2.0",
+  "keywords": [
+    "slashy",
+    "email",
+    "inbox",
+    "calendar",
+    "scheduling",
+    "contacts",
+    "meeting prep",
+    "research",
+    "reminders",
+    "automations"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Slashy",
+    "shortDescription": "Email, calendar, contact research, and meeting workflows through Slashy.",
+    "longDescription": "Connects to Slashy's hosted MCP server with your own Slashy account via browser OAuth. Triage and search email, draft or send replies, manage attachments, check calendar availability, schedule meetings, enrich contacts, prepare meeting briefs, and create reminders or scheduled workflows.",
+    "developerName": "Slashy",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://slashy.com",
+    "privacyPolicyURL": "https://www.slashy.com/privacy",
+    "termsOfServiceURL": "https://www.slashy.com/terms",
+    "defaultPrompt": [
+      "Triage my unread email and tell me what needs a reply first",
+      "Find three open times for my next meeting and draft the reply",
+      "Prepare me for my next external meeting using past email and contact research"
+    ],
+    "brandColor": "#4457C4",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

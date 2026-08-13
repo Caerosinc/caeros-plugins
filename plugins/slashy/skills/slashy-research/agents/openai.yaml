@@ -1,0 +1,11 @@
+interface:
+  display_name: "Slashy Research"
+  short_description: "Research contacts, prep meetings, and run workflows"
+  default_prompt: "Use $slashy-research to prepare me for my next external meeting."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "slashy"
+      description: "Slashy contact research, meeting prep, and workflow tools"
+      transport: "streamable_http"
+      url: "https://slashy.ctrlcenter.ai/mcp"
