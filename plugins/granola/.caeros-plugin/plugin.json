@@ -1,6 +1,6 @@
 {
   "name": "granola",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Search, read, and ask questions across your Granola meeting notes, transcripts, and folders.",
   "keywords": ["granola", "meetings", "meeting notes", "transcripts", "summaries", "action items", "folders", "productivity"],
   "capabilities": {
@@ -16,7 +16,7 @@
     "displayName": "Granola",
     "shortDescription": "Search, read, and ask questions across your Granola meeting notes.",
     "longDescription": "Connects Caeros to Granola's official MCP server (mcp.granola.ai/mcp) with your own Granola account via browser sign-in. Ask questions across your whole meeting history, list meetings by date, title, attendee, or folder, read private and summarized notes with attendees and action items, and pull exact quotes from full transcripts (paid plans). Read-only by design: the connection never modifies your notes.",
-    "developerName": "Caeros",
+    "developerName": "Granola + Caeros",
     "category": "Productivity",
     "capabilities": ["Read", "Interactive"],
     "websiteUrl": "https://www.granola.ai",

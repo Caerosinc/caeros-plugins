@@ -18,7 +18,7 @@ If no Granola tools appear, pause and ask the user to connect:
 2. Click Connect and finish signing in from the browser window.
 3. Retry once the tile shows Connected.
 
-Do not improvise through other integrations (Composio, web search) when the
+Do not improvise through web search or unrelated integrations when the
 native server is merely disconnected — ask to connect instead.
 
 ## The six tools
