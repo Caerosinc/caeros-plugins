@@ -3,35 +3,78 @@
     {
       "slug": "gmail",
       "name": "Gmail",
-      "description": "Google Mail — read, search, draft, and send email.",
-      "provider": "composio",
+      "description": "Connect Gmail once for scoped actions, mailbox sync, managed-agent events, and MCP tools.",
+      "logo_url": "https://www.gstatic.com/images/branding/productlogos/gmail_2026/v1/192px.svg",
+      "provider": "nango",
       "required": true,
       "tools": [
-        "GMAIL_FETCH_EMAILS",
-        "GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID",
-        "GMAIL_FETCH_MESSAGE_BY_THREAD_ID",
-        "GMAIL_LIST_THREADS",
-        "GMAIL_GET_ATTACHMENT",
-        "GMAIL_CREATE_EMAIL_DRAFT",
-        "GMAIL_SEND_EMAIL",
-        "GMAIL_REPLY_TO_THREAD",
-        "GMAIL_ADD_LABEL_TO_EMAIL",
-        "GMAIL_LIST_LABELS",
-        "GMAIL_MODIFY_THREAD_LABELS",
-        "GMAIL_MARK_AS_READ"
+        "get-attachment",
+        "create-draft",
+        "get-draft",
+        "list-drafts",
+        "send-draft",
+        "update-draft",
+        "get-label",
+        "list-labels",
+        "get-message",
+        "list-messages",
+        "modify-message",
+        "send-message",
+        "trash-message",
+        "untrash-message",
+        "get-thread",
+        "list-threads",
+        "modify-thread",
+        "trash-thread",
+        "untrash-thread"
       ],
       "policy": {
-        "GMAIL_FETCH_*": "allow",
-        "GMAIL_LIST_*": "allow",
-        "GMAIL_GET_ATTACHMENT": "allow",
-        "GMAIL_MARK_AS_READ": "allow",
-        "GMAIL_CREATE_EMAIL_DRAFT": "allow",
-        "GMAIL_ADD_LABEL_TO_EMAIL": "ask_first",
-        "GMAIL_MODIFY_THREAD_LABELS": "ask_first",
-        "GMAIL_SEND_EMAIL": "ask_first",
-        "GMAIL_REPLY_TO_THREAD": "ask_first"
+        "get-*": "allow",
+        "list-*": "allow",
+        "create-draft": "allow",
+        "update-draft": "allow",
+        "modify-*": "ask_first",
+        "send-*": "ask_first",
+        "trash-*": "ask_first",
+        "untrash-*": "ask_first"
       },
-      "instructions": "./gmail-instructions.md"
+      "integration": {
+        "id": "google-mail",
+        "mcp": true,
+        "syncs": [
+          {
+            "name": "messages",
+            "models": ["GmailMessage"],
+            "destination": "conare",
+            "container": "connector:gmail",
+            "autoStart": false
+          },
+          {
+            "name": "threads",
+            "models": ["GmailThread"],
+            "destination": "conare",
+            "container": "connector:gmail",
+            "autoStart": false
+          },
+          {
+            "name": "labels",
+            "models": ["GmailLabel"],
+            "destination": "conare",
+            "container": "connector:gmail",
+            "autoStart": false
+          }
+        ],
+        "webhooks": [
+          {
+            "event": "forward",
+            "trigger": "GMAIL_MAILBOX_CHANGED"
+          },
+          {
+            "event": "sync:messages",
+            "trigger": "GMAIL_NEW_EMAIL"
+          }
+        ]
+      }
     }
   ]
 }
