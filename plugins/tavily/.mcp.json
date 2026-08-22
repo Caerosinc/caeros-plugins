@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "tavily": {
-      "transport": "url",
-      "url": "https://mcp.tavily.com/mcp"
-    }
-  }
-}

@@ -1,0 +1,26 @@
+{
+  "name": "google-calendar",
+  "version": "1.0.0",
+  "description": "Find availability and manage Google Calendar through a Caeros-managed Nango connection.",
+  "keywords": ["google", "calendar", "meetings", "scheduling", "productivity"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Google Calendar",
+    "shortDescription": "Find time and manage events with one Google connection.",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "brandColor": "#4285F4",
+    "logo": "./assets/logo.svg",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "defaultPrompt": [
+      "What is on my calendar today?",
+      "Find a free 30-minute slot tomorrow",
+      "Schedule a meeting with these attendees"
+    ]
+  }
+}
