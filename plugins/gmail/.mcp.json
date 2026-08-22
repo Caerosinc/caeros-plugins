@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "gmail": {
-      "transport": "url",
-      "url": "https://gmailmcp.googleapis.com/mcp/v1",
-      "authorization_token_secret_name": "GMAIL_MCP_TOKEN"
-    }
-  }
-}

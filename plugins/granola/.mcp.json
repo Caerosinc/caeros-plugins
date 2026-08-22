@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "granola": {
-      "transport": "url",
-      "url": "https://mcp.granola.ai/mcp",
-      "authorization_token_secret_name": "GRANOLA_MCP_TOKEN"
-    }
-  }
-}

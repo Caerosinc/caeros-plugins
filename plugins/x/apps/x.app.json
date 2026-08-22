@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "slug": "x",
+      "name": "X",
+      "description": "Search posts, timelines, trends, news, and organize bookmarks through Nango.",
+      "logo_url": "https://app.nango.dev/images/template-logos/twitter.svg",
+      "provider": "nango",
+      "required": true,
+      "tools": [
+        "search-posts", "get-post", "get-user", "get-user-timeline", "get-thread", "get-trends", "get-news",
+        "list-bookmarks", "create-bookmark", "delete-bookmark", "list-bookmark-folders", "create-bookmark-folder",
+        "add-bookmark-to-folder", "remove-bookmark-from-folder"
+      ],
+      "policy": {
+        "search-*": "allow", "get-*": "allow", "list-*": "allow",
+        "create-bookmark": "ask_first", "delete-bookmark": "ask_first",
+        "create-bookmark-folder": "ask_first", "add-bookmark-to-folder": "ask_first",
+        "remove-bookmark-from-folder": "ask_first"
+      },
+      "integration": {"id": "x", "mcp": true}
+    }
+  ]
+}

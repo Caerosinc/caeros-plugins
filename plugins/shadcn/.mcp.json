@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "shadcn": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["shadcn@latest", "mcp"]
-    }
-  }
-}

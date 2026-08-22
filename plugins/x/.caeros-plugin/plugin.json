@@ -1,21 +1,18 @@
 {
   "name": "x",
-  "version": "0.1.0",
-  "description": "Search, read, and organize X through X's official MCP server.",
+  "version": "1.0.0",
+  "description": "Search, read, and organize X through a Caeros-managed Nango connection.",
   "keywords": ["x", "twitter", "social", "search", "news", "trends", "bookmarks", "timelines"],
   "capabilities": {
     "skills": "./skills",
-    "mcpServers": "./.mcp.json",
+    "apps": "./apps",
     "assets": "./assets"
-  },
-  "permissions": {
-    "network": ["api.x.com"]
   },
   "runtime": "local",
   "interface": {
     "displayName": "X",
     "shortDescription": "Search posts, timelines, trends, news, and bookmarks on X.",
-    "longDescription": "Connects Caeros to X's official MCP server (api.x.com/mcp) with your own X account. Search the full post archive, read user timelines and threads, scan trends and news, and capture or organize bookmarks with folders. Read-and-bookmark by design: the connection never requests posting permissions.",
+    "longDescription": "Connect X once through Caeros-managed Nango authentication. Search posts, read timelines and threads, scan trends and news, and organize bookmarks. Posting, replying, deletion, and account administration are intentionally excluded.",
     "developerName": "Caeros",
     "category": "Social",
     "capabilities": ["Read", "Interactive"],

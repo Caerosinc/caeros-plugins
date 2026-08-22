@@ -1,0 +1,26 @@
+{
+  "name": "google-drive",
+  "version": "1.0.0",
+  "description": "Search and work with Google Drive through a Caeros-managed Nango connection.",
+  "keywords": ["google", "drive", "docs", "files", "productivity"],
+  "capabilities": {
+    "skills": "./skills",
+    "apps": "./apps",
+    "assets": "./assets"
+  },
+  "runtime": "local",
+  "interface": {
+    "displayName": "Google Drive",
+    "shortDescription": "Find, organize, upload, and share files with one Google connection.",
+    "developerName": "Caeros",
+    "category": "Productivity",
+    "brandColor": "#4285F4",
+    "logo": "./assets/logo.svg",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "defaultPrompt": [
+      "Find the latest planning document in Drive",
+      "Create a folder for this project",
+      "Upload this document to Drive"
+    ]
+  }
+}

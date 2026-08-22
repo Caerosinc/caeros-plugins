@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "onepassword": {
-      "transport": "stdio",
-      "command": "1password-mcp"
-    }
-  }
-}

@@ -1,21 +1,17 @@
 {
   "name": "gmail",
-  "version": "0.2.0",
-  "description": "Read, search, organize, and draft Gmail through Google's official remote MCP server.",
+  "version": "1.0.0",
+  "description": "Read, search, organize, draft, and send Gmail through a Caeros-managed Nango connection.",
   "keywords": ["gmail", "email", "google", "inbox", "productivity"],
   "capabilities": {
     "skills": "./skills",
-    "mcpServers": "./.mcp.json",
     "apps": "./apps",
     "assets": "./assets"
-  },
-  "permissions": {
-    "network": ["gmailmcp.googleapis.com", "api.nango.dev"]
   },
   "runtime": "local",
   "interface": {
     "displayName": "Gmail",
-    "shortDescription": "One-click Gmail auth, agent actions, synced memory, and the official Gmail MCP.",
+    "shortDescription": "One secure connection for Gmail actions and synced memory.",
     "developerName": "Caeros",
     "category": "Productivity",
     "brandColor": "#EA4335",

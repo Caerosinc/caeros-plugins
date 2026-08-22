@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "slug": "google-drive",
+      "name": "Google Drive",
+      "description": "Search and work with files stored in Google Drive with one Google connection.",
+      "logo_url": "https://app.nango.dev/images/template-logos/google-drive.svg",
+      "provider": "nango",
+      "required": true,
+      "tools": [
+        "find-file", "find-folder", "get-about", "get-comment", "get-revision", "list-comments",
+        "list-files-non-unified", "list-drives", "create-folder", "create-comment", "copy-file",
+        "move-file", "update-file", "update-comment", "upload-document", "delete-comment", "delete-file"
+      ],
+      "policy": {
+        "find-*": "allow", "get-*": "allow", "list-*": "allow",
+        "create-*": "ask_first", "copy-*": "ask_first", "move-*": "ask_first",
+        "update-*": "ask_first", "upload-*": "ask_first", "delete-*": "ask_first"
+      },
+      "integration": {"id": "google-drive", "mcp": true}
+    }
+  ]
+}

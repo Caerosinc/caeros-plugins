@@ -1,28 +1,27 @@
 ---
 name: x
-description: Search, read, and monitor X (Twitter) through X's official MCP server — post search, timelines, threads, trends, news, and Articles. Use when the user wants to know what X is saying about anything, follow accounts or threads, or scan trends.
+description: Search, read, and monitor X through Caeros-managed Nango actions. Use for post search, timelines, threads, trends, news, and bookmark organization.
 ---
 
 # X
 
-This skill drives X's official MCP server (`https://api.x.com/mcp`), connected
-with the user's own X account. It assumes the X plugin's MCP server is
-connected so the X tools are available.
+This skill uses the X actions deployed in Caeros's Nango environment. It
+assumes the X plugin is installed and the user's X account is connected.
 
 ## Step 0: Connect the X account (if tools are unavailable)
 
-If no X MCP tools appear, pause and ask the user to connect X:
+If no X actions appear, pause and ask the user to connect X:
 
-1. Open Settings → MCP. The plugin's X server is listed there after install.
+1. Open Plugins → X.
 2. Click Connect for X and finish the OAuth sign-in in the browser.
-3. Retry once the server shows Connected.
+3. Retry once the plugin shows Connected.
 
 After connecting, continue with the request.
 
-## What the X MCP can do
+## What the X connection can do
 
-Discover the exact tool names from the connected server's tool list — do not
-guess slugs. The server provides tools in these families:
+Discover the exact deployed Nango action names from the available tool list —
+do not guess slugs. The connection provides tools in these families:
 
 - **Search**: full-archive post search, user search, and news search.
   Supports X search query syntax (`from:user`, `to:user`, `"exact phrase"`,

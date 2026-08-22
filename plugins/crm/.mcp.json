@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "crm": {
-      "transport": "url",
-      "url": "https://crm.caeros.ai/mcp",
-      "authorization_token_secret_name": "CRM_MCP_TOKEN"
-    }
-  }
-}

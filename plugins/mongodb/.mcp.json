@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "mongodb": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "mongodb-mcp-server@latest"]
-    }
-  }
-}

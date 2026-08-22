@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "slug": "google-calendar",
+      "name": "Google Calendar",
+      "description": "Find availability and manage calendars and events with one Google connection.",
+      "logo_url": "https://app.nango.dev/images/template-logos/google-calendar.svg",
+      "provider": "nango",
+      "required": true,
+      "tools": [
+        "whoami", "get-calendar", "get-event", "list-calendar-list", "list-events", "list-upcoming-events",
+        "search-events", "find-free-slots", "query-free-busy", "create-event", "create-all-day-event",
+        "create-recurring-event", "quick-add-event", "patch-event", "update-event", "delete-event",
+        "add-attendee", "remove-attendee", "update-attendee-response"
+      ],
+      "policy": {
+        "whoami": "allow", "get-*": "allow", "list-*": "allow", "search-*": "allow",
+        "find-*": "allow", "query-*": "allow", "create-*": "ask_first", "quick-add-*": "ask_first",
+        "patch-*": "ask_first", "update-*": "ask_first", "add-*": "ask_first",
+        "remove-*": "ask_first", "delete-*": "ask_first"
+      },
+      "integration": {"id": "google-calendar", "mcp": true}
+    }
+  ]
+}

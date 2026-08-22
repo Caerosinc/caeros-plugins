@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "x": {
-      "transport": "url",
-      "url": "https://api.x.com/mcp"
-    }
-  }
-}

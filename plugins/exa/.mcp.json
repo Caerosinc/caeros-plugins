@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "exa": {
-      "transport": "url",
-      "url": "https://mcp.exa.ai/mcp"
-    }
-  }
-}

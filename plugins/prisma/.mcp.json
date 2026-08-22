@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "prisma": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "prisma", "mcp"]
-    }
-  }
-}
