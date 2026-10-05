@@ -33,16 +33,16 @@ Styling conventions: blue font = editable inputs; black = formulas; green = link
 
 ## Verification (required before reporting completion)
 
-A successful `workbook_create_or_edit` result already includes the authoritative package validation and reopen/inspection, so do not call `office_validate` after it and do not run a routine outline inspection. That validation does not evaluate formulas, so finish with this pass; do not claim success without it:
+A successful `workbook_create_or_edit` result already includes the authoritative package validation and reopen/inspection: do not call `office_validate` after it, and do not run a routine post-mutation `office_inspect`. Inspect only for the targeted follow-ups below, and do not claim success until they pass:
 
 1. From the final mutation result's inspection, confirm every required sheet exists and contains data and that each requested chart exists. Check that the chart series ranges you sent cover the intended data (no off-by-one).
-2. **Formula scan**: run `office_inspect` with `mode: "issues"` on the finished workbook, and once more after any fix batch. It evaluates formulas and reports error results (`#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, `#N/A`, `#NUM!`, `#NULL!`), formulas that reference a sheet that doesn't exist, broken defined names, and chart series that point at missing sheets. Fix every error result, missing-sheet reference, and broken name with another batch; do not suppress errors. A `formula_not_evaluated` entry means the engine could not compute that formula: check it for a misspelled function or bad syntax (Excel would show `#NAME?`), and keep it only when it is a valid Excel function the engine does not support.
-3. Read back the Checks sheet (`office_inspect` with `mode: "text"`, which shows evaluated values) and confirm every status is "OK". If any row says "Review", fix the model, not the check.
+2. **Formula scan**: when the workbook contains formulas, run one `office_inspect` with `mode: "issues"` on the finished workbook as the targeted formula follow-up, because the mutation's validation does not evaluate formulas. The scan evaluates formulas and reports error results (`#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, `#N/A`, `#NUM!`, `#NULL!`), formulas that reference a sheet that doesn't exist, broken defined names, and chart series that point at missing sheets. Fix every error result, missing-sheet reference, and broken name with another batch; do not suppress errors. After a batch that fixes reported issues, rerun the scan once to confirm the fix. A `formula_not_evaluated` entry means the engine could not compute that formula: check it for a misspelled function or bad syntax (Excel would show `#NAME?`), and keep it only when it is a valid Excel function the engine does not support.
+3. Only when the model has a Checks sheet, read it back with `office_inspect` `mode: "text"` (it shows evaluated values) and confirm every status is "OK". If any row says "Review", fix the model, not the check.
 4. In Caeros desktop, the app opens an editable workbook preview automatically; do not call `office_render` just to show it. In CLI/headless runs, call `office_render` once only when visual verification or an export is actually needed.
 
 If the openpyxl fallback wrote the file, the native tool did not validate it: run `office_validate` once on the saved file and use `office_inspect` with `mode: "outline"` for step 1.
 
-Report the workbook with its absolute path and a one-line summary of the scan/check results (e.g. "Formula scan found no errors; workbook checks are OK").
+Report the workbook with its absolute path and a one-line summary of the scan/check results you ran (e.g. "Formula scan found no errors; workbook checks are OK").
 
 ## Google Sheets handoff
 
