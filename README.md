@@ -18,17 +18,17 @@ repository as a git marketplace directly:
 
 ```sh
 # Register this repo as a marketplace named "caeros-official"
-cae plugin add caeros-official https://github.com/Caerosinc/caeros-plugins.git
+caeros plugin add caeros-official https://github.com/Caerosinc/caeros-plugins.git
 
 # Install any plugin from the catalog below
-cae plugin install caeros-official <name>
+caeros plugin install caeros-official <name>
 
 # Later: pull new versions of everything you installed
-cae plugin update
+caeros plugin update
 ```
 
 Updates are delivered as a shallow git re-fetch with content-digest comparison —
-the Update button (or `cae plugin update`) only touches plugins whose contents
+the Update button (or `caeros plugin update`) only touches plugins whose contents
 actually changed.
 
 ## Plugin catalog
@@ -356,14 +356,14 @@ The authoritative reference for all of the above is the
 3. **Validate**:
 
    ```sh
-   cae plugin validate <dir>
+   caeros plugin validate <dir>
    python3 -m json.tool plugins/<name>/.caeros-plugin/plugin.json   # parses cleanly
    ```
 
 4. **Test locally**:
 
    ```sh
-   cae plugin install-local <dir>
+   caeros plugin install-local <dir>
    ```
 
 5. **Pre-ship checklist**:
@@ -379,7 +379,7 @@ Contributions are welcome — both new plugins and improvements to existing ones
 
 1. One plugin per directory under `plugins/`, named in lowercase kebab-case.
 2. Follow the authoring checklist above; CI and reviewers will run
-   `cae plugin validate` on your plugin directory.
+   `caeros plugin validate` on your plugin directory.
 3. Review criteria for first-party submissions: manifest validity, minimal
    permissions, an original logo, accurate storefront copy, and skills/commands
    that follow the conventions in the `create-caeros-plugin` skill.
